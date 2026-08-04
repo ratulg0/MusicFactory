@@ -4,31 +4,275 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | The Music Factory by Archit</title>
-  <meta name="description" content="Learn about The Music Factory — our story, philosophy, teaching method and performance culture." />
+  <meta name="description" content="The story of The Music Factory by Archit — music-first teaching philosophy, our founder, mission, teaching method, performance culture and why parents trust us." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="canonical" href="https://themusicfactory.in/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About | The Music Factory by Archit" />
+  <meta property="og:description" content="Music-first teaching philosophy, our founder and why parents trust The Music Factory." />
+  <meta property="og:image" content="https://themusicfactory.in/assets/images/about-story.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Music Factory by Archit",
+    "slogan": "Learn Music. Express Yourself. Own the Stage.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dehradun", "addressRegion": "Uttarakhand", "addressCountry": "IN" },
+    "email": "hello@themusicfactory.in",
+    "telephone": "+91 00000 00000",
+    "url": "https://themusicfactory.in/about"
+  }
+  </script>
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header id="site-header">
-    <!-- Navbar — Step 4 -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="The Music Factory — Home">The Music <span>Factory</span></a>
+        <ul class="navbar__nav" role="list">
+          <li><a href="../index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link active" aria-current="page">About</a></li>
+          <li><a href="programs.html" class="navbar__link">Programs</a></li>
+          <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary navbar__cta">Book a Trial</a>
+        <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav__overlay" aria-hidden="true"></div>
+    <nav id="mobile-drawer" class="nav__drawer" aria-label="Mobile navigation">
+      <a href="../index.html" class="nav__drawer-link">Home</a>
+      <a href="about.html" class="nav__drawer-link">About</a>
+      <a href="programs.html" class="nav__drawer-link">Programs</a>
+      <a href="gallery.html" class="nav__drawer-link">Gallery</a>
+      <a href="contact.html" class="nav__drawer-link">Contact</a>
+      <a href="contact.html" class="btn btn--primary mt-6">Book a Trial</a>
+    </nav>
   </header>
 
   <main id="main-content">
-    <!-- Hero Banner — Step 7 -->
-    <!-- Academy Story — Step 7 -->
-    <!-- Founder — Step 7 -->
-    <!-- Mission / Vision — Step 7 -->
-    <!-- Teaching Philosophy — Step 7 -->
-    <!-- Performance Culture — Step 7 -->
-    <!-- Statistics — Step 7 -->
-    <!-- CTA — Step 7 -->
+
+    <!-- Hero Banner -->
+    <section class="page-hero" aria-labelledby="page-hero-title">
+      <div class="container">
+        <p class="eyebrow">Our Story</p>
+        <h1 id="page-hero-title" class="page-hero__title">A Factory Where Music Comes Alive</h1>
+        <p class="page-hero__subtitle">
+          We believe students should learn <em>music</em> before they learn an instrument. That single idea shapes everything we do.
+        </p>
+      </div>
+    </section>
+
+    <!-- Academy Story -->
+    <section class="section" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="split">
+          <div class="split__image fade-left">
+            <img src="../assets/images/about-story.svg" alt="Inside a warm, dimly lit music studio at The Music Factory" class="img-fill" loading="lazy" />
+          </div>
+          <div class="split__content fade-right">
+            <p class="eyebrow">The Academy</p>
+            <h2 id="story-heading" class="section-header__title">Built on a Simple Belief</h2>
+            <hr class="divider" />
+            <p class="section-header__body">
+              Most academies hand you an instrument and teach you a song. At The Music Factory we start the other way around — with rhythm, listening, theory and expression. When the instrument finally comes, students already speak the language of music.
+            </p>
+            <p class="section-header__body mt-3">
+              The result is confident musicians who understand what they play, feel the music they perform, and carry that assurance far beyond our studio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="section section--surface" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="split split--reverse">
+          <div class="split__image fade-right">
+            <img src="../assets/images/founder.svg" alt="Archit Bisht, founder of The Music Factory, teaching a student" class="img-fill" loading="lazy" />
+          </div>
+          <div class="split__content fade-left">
+            <p class="eyebrow">The Founder</p>
+            <h2 id="founder-heading" class="section-header__title">Meet Archit Bisht</h2>
+            <hr class="divider" />
+            <p class="section-header__body">
+              Archit founded The Music Factory from a conviction that every student has a unique musical voice — and that the academy's job is simply to help them find it.
+            </p>
+            <p class="section-header__body mt-3">
+              His teaching is known for making theory feel natural, encouragement before correction, and a genuine enthusiasm for each student's growth.
+            </p>
+            <blockquote class="motto mt-6">"Learn Music. Express Yourself. Own the Stage."</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission / Vision / Philosophy -->
+    <section class="section" aria-labelledby="philosophy-heading">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="eyebrow">What We Believe</p>
+          <h2 id="philosophy-heading" class="section-header__title">Mission, Vision &amp; Teaching Philosophy</h2>
+        </div>
+        <div class="cards-3 stagger">
+          <article class="feature-item fade-up">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Mission</h3>
+              <p class="feature-item__desc">To build deep musical understanding and confidence in every student, from the very first note.</p>
+            </div>
+          </article>
+          <article class="feature-item fade-up">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">Vision</h3>
+              <p class="feature-item__desc">A generation of young musicians who understand music, express themselves boldly, and own the stage.</p>
+            </div>
+          </article>
+          <article class="feature-item fade-up">
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-item__title">The Method</h3>
+              <p class="feature-item__desc">Shared musical concepts across instruments — rhythm, listening and expression come first, fingers follow.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Culture -->
+    <section class="section section--surface" aria-labelledby="performance-heading">
+      <div class="container">
+        <div class="split">
+          <div class="split__content fade-left">
+            <p class="eyebrow">Performance Culture</p>
+            <h2 id="performance-heading" class="section-header__title">Confidence Comes from the Stage</h2>
+            <hr class="divider" />
+            <p class="section-header__body">
+              From monthly Music Circle gatherings to our annual graduation showcase, performance is woven into the year — not an optional extra.
+            </p>
+            <p class="section-header__body mt-3">
+              Students learn to rehearse, to play with others, and to stand on a stage with calm confidence. That skill travels far beyond music.
+            </p>
+            <a href="gallery.html" class="btn btn--outline mt-6">View Student Performances</a>
+          </div>
+          <div class="split__image fade-right">
+            <img src="../assets/images/performance-culture.svg" alt="Students performing live on stage during an academy recital" class="img-fill" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="visually-hidden">Academy statistics</h2>
+        <div class="hero__stats justify-center">
+          <div>
+            <div class="hero__stat-number" data-count="200" data-suffix="+">0+</div>
+            <div class="hero__stat-label">Students Trained</div>
+          </div>
+          <div>
+            <div class="hero__stat-number" data-count="8" data-suffix="+">0+</div>
+            <div class="hero__stat-label">Years of Excellence</div>
+          </div>
+          <div>
+            <div class="hero__stat-number" data-count="6">0</div>
+            <div class="hero__stat-label">Max Batch Size</div>
+          </div>
+          <div>
+            <div class="hero__stat-number" data-count="12">0+</div>
+            <div class="hero__stat-label">Performances a Year</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <p class="eyebrow fade-up">Come and See</p>
+        <h2 id="cta-heading" class="cta-section__title fade-up">Meet Archit &amp; Experience a Trial Class</h2>
+        <p class="cta-section__body fade-up">
+          The best way to understand our philosophy is to feel it. Book a free, no-obligation trial lesson for your child.
+        </p>
+        <div class="cta-section__actions fade-up">
+          <a href="contact.html" class="btn btn--primary">Book Your Free Trial</a>
+          <a href="programs.html" class="btn btn--outline">Explore the Year One Program</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer id="site-footer">
-    <!-- Footer — Step 7 -->
+  <footer id="site-footer" class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">The Music <span>Factory</span></div>
+          <p class="footer__tagline">Premium music education in Dehradun. Learn music. Express yourself. Own the stage.</p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links" role="list">
+            <li><a href="../index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="programs.html" class="footer__link">Programs</a></li>
+            <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__links" role="list">
+            <li><a href="programs.html#foundation" class="footer__link">Foundation</a></li>
+            <li><a href="programs.html#intermediate" class="footer__link">Intermediate</a></li>
+            <li><a href="programs.html#performance" class="footer__link">Performance Lab</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <ul class="footer__links" role="list">
+            <li><span class="footer__link">Dehradun, Uttarakhand</span></li>
+            <li><a href="contact.html" class="footer__link">Book a Trial</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 The Music Factory by Archit Bisht. All rights reserved.</span>
+        <span>Made with ♪ in Dehradun</span>
+      </div>
+    </div>
   </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 
   <script src="../js/main.js" type="module" defer></script>
 

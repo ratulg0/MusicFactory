@@ -18,9 +18,11 @@ export function initNavbar() {
   }, 100);
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Active link
+  // Active link (aria-current set in markup; fallback for pathname matching)
   const links = document.querySelectorAll('.navbar__link, .nav__drawer-link');
   links.forEach(link => {
+    const current = document.querySelector(`a[href="${link.getAttribute('href')}"][aria-current="page"]`);
+    if (current) return;
     if (link.getAttribute('href') === window.location.pathname ||
         link.getAttribute('href') === window.location.pathname.split('/').pop()) {
       link.classList.add('active');

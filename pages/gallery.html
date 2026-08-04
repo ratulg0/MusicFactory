@@ -4,30 +4,222 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | The Music Factory by Archit</title>
-  <meta name="description" content="Browse photos from classes, live performances, Music Circle events, graduation showcases and studio moments." />
+  <meta name="description" content="Browse photos from classes, live performances, Music Circle events, graduation showcases, practice sessions and studio moments at The Music Factory." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="canonical" href="https://themusicfactory.in/gallery" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gallery | The Music Factory by Archit" />
+  <meta property="og:description" content="Life at The Music Factory — classes, performances and studio moments." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Music Factory by Archit",
+    "slogan": "Learn Music. Express Yourself. Own the Stage.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dehradun", "addressRegion": "Uttarakhand", "addressCountry": "IN" },
+    "email": "hello@themusicfactory.in",
+    "telephone": "+91 00000 00000",
+    "url": "https://themusicfactory.in/gallery"
+  }
+  </script>
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header id="site-header">
-    <!-- Navbar — Step 4 -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo" aria-label="The Music Factory — Home">The Music <span>Factory</span></a>
+        <ul class="navbar__nav" role="list">
+          <li><a href="../index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="programs.html" class="navbar__link">Programs</a></li>
+          <li><a href="gallery.html" class="navbar__link active" aria-current="page">Gallery</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary navbar__cta">Book a Trial</a>
+        <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav__overlay" aria-hidden="true"></div>
+    <nav id="mobile-drawer" class="nav__drawer" aria-label="Mobile navigation">
+      <a href="../index.html" class="nav__drawer-link">Home</a>
+      <a href="about.html" class="nav__drawer-link">About</a>
+      <a href="programs.html" class="nav__drawer-link">Programs</a>
+      <a href="gallery.html" class="nav__drawer-link">Gallery</a>
+      <a href="contact.html" class="nav__drawer-link">Contact</a>
+      <a href="contact.html" class="btn btn--primary mt-6">Book a Trial</a>
+    </nav>
   </header>
 
   <main id="main-content">
-    <!-- Hero Banner — Step 9 -->
-    <!-- Category Filter Tabs — Step 9 -->
-    <!-- Masonry Grid — Step 9 -->
-    <!-- Lightbox — Step 9 -->
+
+    <!-- Hero Banner -->
+    <section class="page-hero" aria-labelledby="page-hero-title">
+      <div class="container">
+        <p class="eyebrow">Life at The Factory</p>
+        <h1 id="page-hero-title" class="page-hero__title">Moments That Make the Music</h1>
+        <p class="page-hero__subtitle">
+          A glimpse inside our studio — real classes, real performances, real students finding their voice.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" aria-labelledby="gallery-heading">
+      <div class="container">
+
+        <div class="gallery-filters" role="group" aria-label="Filter gallery by category">
+          <button class="gallery-filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="gallery-filter" data-filter="classes" aria-pressed="false">Classes</button>
+          <button class="gallery-filter" data-filter="performance" aria-pressed="false">Live Performances</button>
+          <button class="gallery-filter" data-filter="circle" aria-pressed="false">Music Circle</button>
+          <button class="gallery-filter" data-filter="graduation" aria-pressed="false">Graduation Showcase</button>
+          <button class="gallery-filter" data-filter="practice" aria-pressed="false">Practice Sessions</button>
+          <button class="gallery-filter" data-filter="studio" aria-pressed="false">Studio Moments</button>
+        </div>
+
+        <h2 id="gallery-heading" class="visually-hidden">Gallery</h2>
+        <div class="gallery-masonry">
+
+          <figure class="gallery-masonry__item" data-category="classes" data-src="../assets/images/gallery-1.svg" data-caption="Foundation class in session" role="button" tabindex="0">
+            <img src="../assets/images/gallery-1.svg" alt="Foundation class in session at The Music Factory" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Foundation Class</span>
+              <span class="gallery-masonry__cat">Classes</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-masonry__item" data-category="performance" data-src="../assets/images/gallery-2.svg" data-caption="Performance Lab rehearsal" role="button" tabindex="0">
+            <img src="../assets/images/gallery-2.svg" alt="Performance Lab students rehearsing an ensemble piece" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Performance Lab</span>
+              <span class="gallery-masonry__cat">Live Performances</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-masonry__item" data-category="graduation" data-src="../assets/images/gallery-3.svg" data-caption="Annual recital" role="button" tabindex="0">
+            <img src="../assets/images/gallery-3.svg" alt="Annual graduation recital at The Music Factory" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Annual Recital</span>
+              <span class="gallery-masonry__cat">Graduation Showcase</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-masonry__item" data-category="circle" data-src="../assets/images/gallery-4.svg" data-caption="Monthly Music Circle gathering" role="button" tabindex="0">
+            <img src="../assets/images/gallery-4.svg" alt="Monthly Music Circle gathering in the studio" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Music Circle</span>
+              <span class="gallery-masonry__cat">Music Circle</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-masonry__item" data-category="practice" data-src="../assets/images/gallery-5.svg" data-caption="Focused practice session" role="button" tabindex="0">
+            <img src="../assets/images/gallery-5.svg" alt="Student in a focused practice session" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Practice Session</span>
+              <span class="gallery-masonry__cat">Practice Sessions</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-masonry__item" data-category="studio" data-src="../assets/images/gallery-6.svg" data-caption="Studio moment between lessons" role="button" tabindex="0">
+            <img src="../assets/images/gallery-6.svg" alt="A quiet studio moment between lessons at The Music Factory" loading="lazy" />
+            <figcaption class="gallery-masonry__caption">
+              <span class="gallery-masonry__title">Studio Moment</span>
+              <span class="gallery-masonry__cat">Studio Moments</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <p class="eyebrow fade-up">Want to Belong Here?</p>
+        <h2 id="cta-heading" class="cta-section__title fade-up">Your Spotlight Awaits</h2>
+        <p class="cta-section__body fade-up">
+          Every story in this gallery started with a single trial class. Come write the next chapter.
+        </p>
+        <div class="cta-section__actions fade-up">
+          <a href="contact.html" class="btn btn--primary">Book Your Free Trial</a>
+          <a href="programs.html" class="btn btn--outline">Explore the Year One Program</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer id="site-footer">
-    <!-- Footer — Step 9 -->
+  <footer id="site-footer" class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">The Music <span>Factory</span></div>
+          <p class="footer__tagline">Premium music education in Dehradun. Learn music. Express yourself. Own the stage.</p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links" role="list">
+            <li><a href="../index.html" class="footer__link">Home</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="programs.html" class="footer__link">Programs</a></li>
+            <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Programs</div>
+          <ul class="footer__links" role="list">
+            <li><a href="programs.html#foundation" class="footer__link">Foundation</a></li>
+            <li><a href="programs.html#intermediate" class="footer__link">Intermediate</a></li>
+            <li><a href="programs.html#performance" class="footer__link">Performance Lab</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <ul class="footer__links" role="list">
+            <li><span class="footer__link">Dehradun, Uttarakhand</span></li>
+            <li><a href="contact.html" class="footer__link">Book a Trial</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 The Music Factory by Archit Bisht. All rights reserved.</span>
+        <span>Made with ♪ in Dehradun</span>
+      </div>
+    </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" aria-label="Close image viewer">✕</button>
+    <button class="lightbox__nav lightbox__prev" aria-label="Previous image">‹</button>
+    <img class="lightbox__img" src="" alt="" />
+    <div class="lightbox__caption" aria-live="polite"></div>
+    <button class="lightbox__nav lightbox__next" aria-label="Next image">›</button>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
   <script src="../js/main.js" type="module" defer></script>
-  <script src="../js/gallery.js" type="module" defer></script>
 
 </body>
 </html>

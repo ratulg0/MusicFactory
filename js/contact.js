@@ -29,9 +29,18 @@ export function initContact() {
 
     if (valid) {
       const btn = form.querySelector('[type="submit"]');
-      btn.textContent = 'Message Sent!';
+      const status = form.querySelector('.form-status');
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Message Sent!';
+        if (status) {
+          status.textContent = 'Thank you! We have received your message and will get back to you soon.';
+          status.classList.remove('visually-hidden');
+        }
+        form.reset();
+        setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; }, 4000);
+      }, 900);
     }
   });
 

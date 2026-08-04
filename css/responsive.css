@@ -27,6 +27,13 @@
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 
+  .gallery-masonry { columns: 2; }
+
+  .timeline { gap: var(--space-4); }
+  .timeline::before { left: 0; right: 0; }
+
+  .contact-grid { gap: var(--space-8); }
+
   .split { grid-template-columns: 1fr; gap: var(--space-6); }
   .split--reverse .split__image { order: 0; }
   .split--reverse .split__content { order: 0; }
@@ -52,6 +59,13 @@
   .hero__actions .btn { width: 100%; justify-content: center; }
 
   .gallery-grid { grid-template-columns: 1fr; }
+
+  .gallery-masonry { columns: 1; }
+
+  .timeline { grid-template-columns: 1fr; }
+  .timeline::before { display: none; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: var(--space-8); }
 
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; gap: var(--space-2); text-align: center; }

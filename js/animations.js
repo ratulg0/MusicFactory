@@ -43,3 +43,29 @@ export function initCounters() {
 
   counters.forEach(el => observer.observe(el));
 }
+
+export function initCarousel() {
+  const carousel = document.querySelector('[data-carousel]');
+  if (!carousel) return;
+
+  const track = carousel.querySelector('.testimonials__track');
+  const prev = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  if (!track || !prev || !next) return;
+
+  const card = track.querySelector('.testimonial-card');
+  const step = () => {
+    if (window.matchMedia('(min-width: 1025px)').matches) return 0;
+    const visible = card ? track.clientWidth : 0;
+    return Math.max(card ? card.getBoundingClientRect().width + card.clientLeft : 0, 0);
+  };
+
+  prev.addEventListener('click', () => {
+    const s = step();
+    if (s) track.scrollBy({ left: -s, behavior: 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    const s = step();
+    if (s) track.scrollBy({ left: s, behavior: 'smooth' });
+  });
+}

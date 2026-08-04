@@ -6,7 +6,31 @@
   <title>The Music Factory by Archit | Learn Music. Express Yourself. Own the Stage.</title>
   <meta name="description" content="Premium music academy in Dehradun offering structured music education, performance-focused learning and small batch classes for all ages." />
   <meta name="theme-color" content="#0B0B0B" />
+  <link rel="preload" href="assets/images/hero.jpg" as="image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="canonical" href="https://themusicfactory.in/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Music Factory by Archit | Learn Music. Express Yourself. Own the Stage." />
+  <meta property="og:description" content="Premium music academy in Dehradun offering structured music education, performance-focused learning and small batch classes for all ages." />
+  <meta property="og:image" content="https://themusicfactory.in/assets/images/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Music Factory by Archit",
+    "slogan": "Learn Music. Express Yourself. Own the Stage.",
+    "description": "Premium music academy in Dehradun offering structured music education and performance-focused learning.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dehradun", "addressRegion": "Uttarakhand", "addressCountry": "IN" },
+    "email": "hello@themusicfactory.in",
+    "telephone": "+91 00000 00000",
+    "openingHours": "Mo-Sa 10:00-19:00",
+    "url": "https://themusicfactory.in",
+    "image": "https://themusicfactory.in/assets/images/hero.jpg"
+  }
+  </script>
 </head>
 <body>
 
@@ -20,7 +44,7 @@
           The Music <span>Factory</span>
         </a>
         <ul class="navbar__nav" role="list">
-          <li><a href="index.html" class="navbar__link active">Home</a></li>
+          <li><a href="index.html" class="navbar__link active" aria-current="page">Home</a></li>
           <li><a href="pages/about.html" class="navbar__link">About</a></li>
           <li><a href="pages/programs.html" class="navbar__link">Programs</a></li>
           <li><a href="pages/gallery.html" class="navbar__link">Gallery</a></li>
@@ -48,22 +72,24 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" aria-label="Hero">
-      <div class="hero__bg"></div>
+      <div class="hero__bg">
+        <img src="assets/images/hero.jpg" alt="" aria-hidden="true" fetchpriority="high" />
+      </div>
       <div class="hero__content">
         <div class="hero__text">
           <p class="hero__eyebrow fade-up">Premium Music Education · Dehradun</p>
-          <h1 class="hero__title fade-up" style="transition-delay:100ms">
+          <h1 class="hero__title fade-up">
             Learn Music.<br><em>Express Yourself.</em><br>Own the Stage.
           </h1>
-          <p class="hero__subtitle fade-up" style="transition-delay:200ms">
+          <p class="hero__subtitle fade-up">
             At The Music Factory, students don't just learn instruments — they develop musical understanding, confidence, and the skills to perform with conviction.
           </p>
-          <div class="hero__actions fade-up" style="transition-delay:300ms">
+          <div class="hero__actions fade-up">
             <a href="pages/contact.html" class="btn btn--primary">Book a Free Trial</a>
             <a href="pages/programs.html" class="btn btn--outline">Explore Programs</a>
           </div>
         </div>
-        <div class="hero__stats fade-up" style="transition-delay:400ms">
+        <div class="hero__stats fade-up">
           <div>
             <div class="hero__stat-number" data-count="200" data-suffix="+">0+</div>
             <div class="hero__stat-label">Students Trained</div>
@@ -137,7 +163,9 @@
         </div>
         <div class="cards-3 stagger">
           <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">🎵</div>
+            <div class="program-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
             <div class="program-card__level">Stage 01</div>
             <h3 class="program-card__title">Foundation</h3>
             <p class="program-card__desc">
@@ -151,7 +179,9 @@
             <a href="pages/programs.html#foundation" class="btn btn--ghost mt-3">Learn More →</a>
           </article>
           <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">🎸</div>
+            <div class="program-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>
+            </div>
             <div class="program-card__level">Stage 02</div>
             <h3 class="program-card__title">Intermediate</h3>
             <p class="program-card__desc">
@@ -165,7 +195,9 @@
             <a href="pages/programs.html#intermediate" class="btn btn--ghost mt-3">Learn More →</a>
           </article>
           <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">🎤</div>
+            <div class="program-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            </div>
             <div class="program-card__level">Stage 03</div>
             <h3 class="program-card__title">Performance Lab</h3>
             <p class="program-card__desc">
@@ -191,28 +223,36 @@
         </div>
         <div class="cards-2 stagger">
           <div class="feature-item fade-up">
-            <div class="feature-item__icon" aria-hidden="true">🎯</div>
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
             <div>
               <h3 class="feature-item__title">Music-First Curriculum</h3>
               <p class="feature-item__desc">We teach musical thinking, not just finger movements. Students understand what they play.</p>
             </div>
           </div>
           <div class="feature-item fade-up">
-            <div class="feature-item__icon" aria-hidden="true">👥</div>
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <div>
               <h3 class="feature-item__title">Small Batch Classes</h3>
               <p class="feature-item__desc">Maximum 6 students per batch. Every student gets personal attention and feedback.</p>
             </div>
           </div>
           <div class="feature-item fade-up">
-            <div class="feature-item__icon" aria-hidden="true">🎭</div>
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            </div>
             <div>
               <h3 class="feature-item__title">Performance-Focused</h3>
               <p class="feature-item__desc">Regular recitals and stage opportunities build real confidence, not just technical skill.</p>
             </div>
           </div>
           <div class="feature-item fade-up">
-            <div class="feature-item__icon" aria-hidden="true">🌱</div>
+            <div class="feature-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
             <div>
               <h3 class="feature-item__title">Structured Progression</h3>
               <p class="feature-item__desc">A clear three-stage journey so students always know where they are and where they're headed.</p>
@@ -230,16 +270,16 @@
           <h2 id="gallery-heading" class="section-header__title">Where Music Comes Alive</h2>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-item fade-up" data-src="assets/images/gallery-1.jpg" data-caption="Foundation class in session" role="button" aria-label="View: Foundation class in session">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0a00,#2d1a00);display:flex;align-items:center;justify-content:center;font-size:3rem;" aria-hidden="true">🎵</div>
+          <div class="gallery-item fade-up" data-src="assets/images/gallery-1.svg" data-caption="Foundation class in session" role="button" tabindex="0" aria-label="View: Foundation class in session">
+            <img src="assets/images/gallery-1.svg" alt="Foundation class in session" loading="lazy" />
             <div class="gallery-item__overlay"><span class="gallery-item__caption">Foundation Class</span></div>
           </div>
-          <div class="gallery-item fade-up" data-src="assets/images/gallery-2.jpg" data-caption="Performance Lab rehearsal" role="button" aria-label="View: Performance Lab rehearsal">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a1a00,#1a2d00);display:flex;align-items:center;justify-content:center;font-size:3rem;" aria-hidden="true">🎸</div>
+          <div class="gallery-item fade-up" data-src="assets/images/gallery-2.svg" data-caption="Performance Lab rehearsal" role="button" tabindex="0" aria-label="View: Performance Lab rehearsal">
+            <img src="assets/images/gallery-2.svg" alt="Performance Lab rehearsal" loading="lazy" />
             <div class="gallery-item__overlay"><span class="gallery-item__caption">Performance Lab</span></div>
           </div>
-          <div class="gallery-item fade-up" data-src="assets/images/gallery-3.jpg" data-caption="Annual recital" role="button" aria-label="View: Annual recital">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#00001a,#00002d);display:flex;align-items:center;justify-content:center;font-size:3rem;" aria-hidden="true">🎤</div>
+          <div class="gallery-item fade-up" data-src="assets/images/gallery-3.svg" data-caption="Annual recital" role="button" tabindex="0" aria-label="View: Annual recital">
+            <img src="assets/images/gallery-3.svg" alt="Annual recital" loading="lazy" />
             <div class="gallery-item__overlay"><span class="gallery-item__caption">Annual Recital</span></div>
           </div>
         </div>
@@ -256,37 +296,46 @@
           <p class="eyebrow">Student Stories</p>
           <h2 id="testimonials-heading" class="section-header__title">What Our Students Say</h2>
         </div>
-        <div class="cards-3 stagger">
-          <div class="testimonial-card fade-up">
-            <p class="testimonial-card__quote">"I tried two other academies before this. The Music Factory is the first place where I actually understand what I'm playing, not just copying."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">R</div>
-              <div>
-                <div class="testimonial-card__name">Rohan M.</div>
-                <div class="testimonial-card__role">Guitar · Intermediate Program</div>
+        <div class="testimonials" data-carousel>
+          <div class="testimonials__track">
+            <div class="testimonial-card fade-up">
+              <p class="testimonial-card__quote">"I tried two other academies before this. The Music Factory is the first place where I actually understand what I'm playing, not just copying."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" aria-hidden="true">R</div>
+                <div>
+                  <div class="testimonial-card__name">Rohan M.</div>
+                  <div class="testimonial-card__role">Guitar · Intermediate Program</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card fade-up">
+              <p class="testimonial-card__quote">"My daughter was shy about performing. After six months in Performance Lab, she performed a solo at the recital. I cried."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" aria-hidden="true">P</div>
+                <div>
+                  <div class="testimonial-card__name">Priya S.</div>
+                  <div class="testimonial-card__role">Parent · Foundation Program</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card fade-up">
+              <p class="testimonial-card__quote">"Archit's teaching style is unlike anything I've experienced. He makes theory feel natural, not like homework."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar" aria-hidden="true">A</div>
+                <div>
+                  <div class="testimonial-card__name">Aditya K.</div>
+                  <div class="testimonial-card__role">Keyboard · Performance Lab</div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="testimonial-card fade-up">
-            <p class="testimonial-card__quote">"My daughter was shy about performing. After six months in Performance Lab, she performed a solo at the recital. I cried."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">P</div>
-              <div>
-                <div class="testimonial-card__name">Priya S.</div>
-                <div class="testimonial-card__role">Parent · Foundation Program</div>
-              </div>
-            </div>
+          <div class="testimonials__controls" aria-label="Testimonial carousel controls">
+            <button class="testimonials__btn" data-carousel-prev aria-label="Previous testimonial">←</button>
+            <button class="testimonials__btn" data-carousel-next aria-label="Next testimonial">→</button>
           </div>
-          <div class="testimonial-card fade-up">
-            <p class="testimonial-card__quote">"Archit's teaching style is unlike anything I've experienced. He makes theory feel natural, not like homework."</p>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__avatar" aria-hidden="true">A</div>
-              <div>
-                <div class="testimonial-card__name">Aditya K.</div>
-                <div class="testimonial-card__role">Keyboard · Performance Lab</div>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="text-center mt-6">
+          <p class="section-header__body">Join our next batch and start your musical journey.</p>
         </div>
       </div>
     </section>
@@ -295,7 +344,7 @@
     <section class="cta-section" aria-labelledby="cta-heading">
       <div class="container">
         <p class="eyebrow fade-up">Ready to Begin?</p>
-        <h2 id="cta-heading" class="cta-section__title fade-up">Your First Lesson Is Free.</h2>
+        <h2 id="cta-heading" class="cta-section__title fade-up">Ready to Begin Your Musical Journey?</h2>
         <p class="cta-section__body fade-up">
           Schedule a no-obligation trial lesson and experience The Music Factory difference for yourself. No prior experience needed.
         </p>
@@ -316,9 +365,15 @@
           <div class="footer__brand-name">The Music <span>Factory</span></div>
           <p class="footer__tagline">Premium music education in Dehradun. Learn music. Express yourself. Own the stage.</p>
           <div class="footer__social" aria-label="Social media links">
-            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
-            <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
           </div>
         </div>
         <div>
@@ -348,7 +403,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2025 The Music Factory by Archit Bisht. All rights reserved.</span>
+        <span>© 2026 The Music Factory by Archit Bisht. All rights reserved.</span>
         <span>Made with ♪ in Dehradun</span>
       </div>
     </div>
@@ -359,6 +414,7 @@
     <button class="lightbox__close" aria-label="Close image viewer">✕</button>
     <button class="lightbox__nav lightbox__prev" aria-label="Previous image">‹</button>
     <img class="lightbox__img" src="" alt="" />
+    <div class="lightbox__caption" aria-live="polite"></div>
     <button class="lightbox__nav lightbox__next" aria-label="Next image">›</button>
   </div>
 

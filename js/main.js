@@ -3,16 +3,19 @@
  * Initialises all modules after DOM is ready
  */
 import { initNavbar } from './navbar.js';
-import { initAnimations, initCounters } from './animations.js';
+import { initAnimations, initCounters, initCarousel } from './animations.js';
 import { initGallery } from './gallery.js';
 import { initContact } from './contact.js';
+import { initFAQ } from './faq.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initAnimations();
   initCounters();
+  initCarousel();
   initGallery();
   initContact();
+  initFAQ();
 
   // Back to top
   const btn = document.querySelector('.back-to-top');
