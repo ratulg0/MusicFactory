@@ -970,8 +970,7 @@
 }
 
 .gallery-masonry__item:hover .gallery-masonry__caption,
-.gallery-masonry__item:focus-visible .gallery-masonry__caption,
-.is-hidden .gallery-masonry__caption { opacity: 1; }
+.gallery-masonry__item:focus-visible .gallery-masonry__caption { opacity: 1; }
 
 .gallery-masonry__title {
   font-size: var(--text-small);

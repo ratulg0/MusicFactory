@@ -73,10 +73,6 @@ function initLightbox() {
   }
 
   items.forEach((item, i) => {
-    if (item.hasAttribute('role')) return;
-  });
-
-  document.querySelectorAll('.gallery-masonry__item, .gallery-item').forEach((item) => {
     item.addEventListener('click', () => {
       items = getItems();
       open(items.indexOf(item));
