@@ -1,0 +1,151 @@
+/* ============================================================
+   THE MUSIC FACTORY — Animations & Transitions
+   Philosophy: motion supports content, never distracts.
+   All animations respect prefers-reduced-motion (set in reset.css).
+   ============================================================ */
+
+/* ---- Scroll-reveal base states ---- */
+/* Elements start invisible; JS adds .is-visible to trigger entrance */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-2.5rem);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(2.5rem);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+/* Visible state — added by IntersectionObserver in animations.js */
+.fade-up.is-visible,
+.fade-left.is-visible,
+.fade-right.is-visible,
+.zoom-in.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Stagger delays for sibling groups --- */
+.stagger > *:nth-child(1) { transition-delay: 0ms; }
+.stagger > *:nth-child(2) { transition-delay: 100ms; }
+.stagger > *:nth-child(3) { transition-delay: 200ms; }
+.stagger > *:nth-child(4) { transition-delay: 300ms; }
+.stagger > *:nth-child(5) { transition-delay: 400ms; }
+.stagger > *:nth-child(6) { transition-delay: 500ms; }
+
+/* --- Hover: card lift --- */
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Hover: button lift --- */
+.hover-btn {
+  transition: transform var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.hover-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Hover: image zoom --- */
+.hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.hover-zoom img {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Hero background slow zoom --- */
+.hero__bg {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* --- Navbar fade-in on load --- */
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-0.5rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.navbar {
+  animation: navFadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+/* --- Counter number animation (JS-driven, CSS easing) --- */
+.stat__number {
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+/* --- Lightbox open/close --- */
+.lightbox {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- Mobile menu slide-in --- */
+.nav__drawer {
+  transform: translateX(100%);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.nav__drawer.is-open {
+  transform: translateX(0);
+}
+
+/* --- FAQ accordion height --- */
+.faq__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-normal) var(--ease-out);
+}
+
+.faq__body.is-open {
+  grid-template-rows: 1fr;
+}
+
+.faq__body-inner {
+  overflow: hidden;
+}

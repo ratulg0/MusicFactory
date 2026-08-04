@@ -1,0 +1,14 @@
+/* ============================================================
+   THE MUSIC FACTORY — Main CSS Entry Point
+   Import order matters: tokens → reset → type → layout →
+   components → animations → utilities → responsive
+   ============================================================ */
+
+@import url('variables.css');
+@import url('reset.css');
+@import url('typography.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('utilities.css');
+@import url('responsive.css');

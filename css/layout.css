@@ -1,0 +1,150 @@
+/* ============================================================
+   THE MUSIC FACTORY — Layout System
+   Container, 12-col grid, section spacing, page structure
+   ============================================================ */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* --- Section base --- */
+.section {
+  padding-block: var(--section-py);
+}
+
+/* Alternate surface backgrounds for visual rhythm */
+.section--surface {
+  background-color: var(--color-surface);
+}
+
+.section--card {
+  background-color: var(--color-card);
+}
+
+/* Full-width section with contained inner content */
+.section--full {
+  padding-inline: 0;
+}
+
+/* --- 12-column CSS Grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
+
+/* Common span helpers */
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-8  { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+/* --- Flex helpers --- */
+.flex         { display: flex; }
+.flex-center  { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col     { display: flex; flex-direction: column; }
+.flex-wrap    { flex-wrap: wrap; }
+.gap-2        { gap: var(--space-2); }
+.gap-3        { gap: var(--space-3); }
+.gap-4        { gap: var(--space-4); }
+.gap-6        { gap: var(--space-6); }
+
+/* --- Card grid layouts --- */
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+/* 2-col split layout (image + text) */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.split--reverse .split__image { order: 2; }
+.split--reverse .split__content { order: 1; }
+
+/* --- Page hero banner (inner pages) --- */
+.page-hero {
+  padding-block: var(--space-15);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.page-hero__title {
+  font-size: var(--text-h1);
+  margin-bottom: var(--space-2);
+}
+
+.page-hero__subtitle {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+/* --- Back to top button --- */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-above);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-gold-hover);
+}
+
+/* --- Skip link (accessibility) --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-md);
+  z-index: var(--z-toast);
+  transition: top var(--duration-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
