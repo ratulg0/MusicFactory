@@ -15,6 +15,8 @@
   .navbar__hamburger { display: flex; }
   .nav__drawer { display: flex; }
 
+  .theme-toggle { width: 6.5rem; margin-left: var(--space-2); }
+
   .hero__stats { gap: var(--space-6); }
 
   .cards-3 { grid-template-columns: repeat(2, 1fr); }
@@ -76,6 +78,13 @@
   .section-header { margin-bottom: var(--space-6); }
 
   .lightbox__nav { display: none; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 480px) {
+  .theme-toggle { width: 5.5rem; height: 2rem; margin-left: var(--space-1); }
+  .theme-toggle__label { font-size: 0.7rem; }
+  .navbar__logo { font-size: 1.1rem; }
 }
 
 /* ---- Small mobile ---- */

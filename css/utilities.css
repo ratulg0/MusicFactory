@@ -33,6 +33,16 @@
 .mb-3 { margin-bottom: var(--space-3); }
 .mb-4 { margin-bottom: var(--space-4); }
 .mb-6 { margin-bottom: var(--space-6); }
+
+/* --- Tag rows --- */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+/* --- Horizontal centering --- */
+.mx-auto { margin-inline: auto; }
 .mb-8 { margin-bottom: var(--space-8); }
 
 /* --- Divider --- */
@@ -91,13 +101,12 @@
 .scroll-indicator {
   position: absolute;
   bottom: var(--space-4);
-  left: 50%;
-  transform: translateX(-50%);
+  right: var(--space-4);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-1);
-  color: rgba(245, 242, 235, 0.5);
+  color: var(--color-hero-text-soft);
   font-size: var(--text-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -111,6 +120,6 @@
 }
 
 @keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(6px); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
 }

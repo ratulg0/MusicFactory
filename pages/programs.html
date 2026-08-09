@@ -4,8 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programs | The Music Factory by Archit</title>
-  <meta name="description" content="Explore the Year One program — Foundation, Intermediate and Performance Lab terms with structured outcomes, assessments and certifications." />
+  <meta name="description" content="Explore the five programs at The Music Factory — Foundation, Intermediate, Performance Lab, Songwriting & Music Production and Music for Soul, with structured outcomes, chapters and certifications." />
   <meta name="theme-color" content="#0B0B0B" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +22,7 @@
   <link rel="canonical" href="https://themusicfactory.in/programs" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Programs | The Music Factory by Archit" />
-  <meta property="og:description" content="One journey, three stages: Foundation, Intermediate and Performance Lab in a structured Year One program." />
+  <meta property="og:description" content="Five structured programs: Foundation, Intermediate, Performance Lab, Songwriting & Music Production and Music for Soul." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,9 +48,15 @@
           <li><a href="../index.html" class="navbar__link">Home</a></li>
           <li><a href="about.html" class="navbar__link">About</a></li>
           <li><a href="programs.html" class="navbar__link active" aria-current="page">Programs</a></li>
+          <li><a href="curriculum.html" class="navbar__link">Curriculum</a></li>
           <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
           <li><a href="contact.html" class="navbar__link">Contact</a></li>
         </ul>
+        <button class="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light theme">
+          <span class="theme-toggle__knob" aria-hidden="true"></span>
+          <span class="theme-toggle__label theme-toggle__label--dark">Dark</span>
+          <span class="theme-toggle__label theme-toggle__label--light">Light</span>
+        </button>
         <a href="contact.html" class="btn btn--primary navbar__cta">Book a Trial</a>
         <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span><span></span><span></span>
@@ -55,6 +68,7 @@
       <a href="../index.html" class="nav__drawer-link">Home</a>
       <a href="about.html" class="nav__drawer-link">About</a>
       <a href="programs.html" class="nav__drawer-link">Programs</a>
+      <a href="curriculum.html" class="nav__drawer-link">Curriculum</a>
       <a href="gallery.html" class="nav__drawer-link">Gallery</a>
       <a href="contact.html" class="nav__drawer-link">Contact</a>
       <a href="contact.html" class="btn btn--primary mt-6">Book a Trial</a>
@@ -66,81 +80,25 @@
     <!-- Hero Banner -->
     <section class="page-hero" aria-labelledby="page-hero-title">
       <div class="container">
-        <p class="eyebrow">The Year One Program</p>
-        <h1 id="page-hero-title" class="page-hero__title">One Journey. Three Stages.</h1>
+        <p class="eyebrow">Our Programs</p>
+        <h1 id="page-hero-title" class="page-hero__title">Five Programs. One Path.</h1>
         <p class="page-hero__subtitle">
-          Your first twelve months at The Music Factory — from your very first beat to owning the stage.
+          Five structured programs designed for beginners, developing musicians, performers, aspiring creators and working professionals — from your very first note to owning the stage.
         </p>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="section" aria-labelledby="timeline-heading">
-      <div class="container">
-        <div class="section-header section-header--center fade-up">
-          <p class="eyebrow">The Journey</p>
-          <h2 id="timeline-heading" class="section-header__title">12 Months, One Clear Path</h2>
-        </div>
-        <div class="timeline fade-up">
-          <div class="timeline__item">
-            <div class="timeline__node" aria-hidden="true">01</div>
-            <h3 class="timeline__title">Foundation</h3>
-            <p class="timeline__months">Months 1–4</p>
-            <p class="timeline__desc">Beat, rhythm, melody, harmony, listening and technique. The musical bedrock.</p>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__node" aria-hidden="true">02</div>
-            <h3 class="timeline__title">Intermediate</h3>
-            <p class="timeline__months">Months 5–8</p>
-            <p class="timeline__desc">Expression, ensemble playing, dynamics and stage confidence.</p>
-          </div>
-          <div class="timeline__item">
-            <div class="timeline__node" aria-hidden="true">03</div>
-            <h3 class="timeline__title">Performance Lab</h3>
-            <p class="timeline__months">Months 9–12</p>
-            <p class="timeline__desc">Public performance, recording, rehearsal discipline and your graduation showcase.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Term Cards -->
-    <section class="section section--surface" aria-labelledby="terms-heading">
+    <!-- Program Cards -->
+    <section class="section" aria-labelledby="courses-heading">
       <div class="container">
         <div class="section-header fade-up">
-          <p class="eyebrow">Stages in Detail</p>
-          <h2 id="terms-heading" class="section-header__title">What Each Stage Covers</h2>
+          <p class="eyebrow">Courses in Detail</p>
+          <h2 id="courses-heading" class="section-header__title">What Each Course Covers</h2>
         </div>
-        <div class="cards-3 stagger">
-
-          <article class="program-card fade-up" id="foundation">
-            <div class="program-card__level">Term 1 · Months 1–4</div>
-            <h3 class="program-card__title">Foundation</h3>
-            <p class="program-card__desc">Students learn to feel rhythm, recognise melody and harmony, and develop listening habits and technique that every instrument shares.</p>
-            <div class="program-card__tags">
-              <span class="tag">Beat</span><span class="tag">Rhythm</span><span class="tag">Melody</span><span class="tag">Harmony</span><span class="tag">Listening</span>
-            </div>
-          </article>
-
-          <article class="program-card fade-up" id="intermediate">
-            <div class="program-card__level">Term 2 · Months 5–8</div>
-            <h3 class="program-card__title">Intermediate</h3>
-            <p class="program-card__desc">Expression, dynamics and ensemble playing. Students find their musical voice and begin performing in small groups.</p>
-            <div class="program-card__tags">
-              <span class="tag">Expression</span><span class="tag">Ensemble</span><span class="tag">Dynamics</span><span class="tag">Stage Confidence</span>
-            </div>
-          </article>
-
-          <article class="program-card fade-up" id="performance">
-            <div class="program-card__level">Term 3 · Months 9–12</div>
-            <h3 class="program-card__title">Performance Lab</h3>
-            <p class="program-card__desc">Real public performances, studio recording sessions and disciplined rehearsal — culminating in the graduation showcase.</p>
-            <div class="program-card__tags">
-              <span class="tag">Public Performance</span><span class="tag">Recording</span><span class="tag">Rehearsal</span><span class="tag">Graduation</span>
-            </div>
-          </article>
-
-        </div>
+        <div class="course-list stagger" data-course-cards></div>
+        <noscript>
+          <p class="section-header__body">Our five programs: Foundation, Intermediate, Performance Lab, Songwriting &amp; Music Production, and Music for Soul. Enable JavaScript to explore each course in detail.</p>
+        </noscript>
       </div>
     </section>
 
@@ -176,7 +134,7 @@
             </div>
             <div>
               <h3 class="feature-item__title">Certificates</h3>
-              <p class="feature-item__desc">Students earn progressive certificates at each stage, and all Year One students celebrate completion at the graduation showcase — on a real stage.</p>
+              <p class="feature-item__desc">Students earn progressive certificates in each program, and celebrate their completion at the graduation showcase — on a real stage.</p>
             </div>
           </article>
           <article class="feature-item fade-up">
@@ -251,7 +209,7 @@
             </button>
             <div class="faq__body" aria-hidden="true" id="faq-certificates">
               <div class="faq__body-inner">
-                <p class="faq__answer">Yes. Students earn progressive certificates at each stage and perform at the annual graduation showcase at the end of Year One.</p>
+                <p class="faq__answer">Yes. Students earn progressive certificates in each program and perform at the annual graduation showcase.</p>
               </div>
             </div>
           </div>
@@ -266,7 +224,7 @@
         <p class="eyebrow fade-up">Start the Journey</p>
         <h2 id="cta-heading" class="cta-section__title fade-up">Your First Lesson Is Free</h2>
         <p class="cta-section__body fade-up">
-          Come feel the Music Factory difference. Book a trial class and begin the twelve-month journey today.
+          Come feel the Music Factory difference. Book a trial class and find the program that fits your musical journey.
         </p>
         <div class="cta-section__actions fade-up">
           <a href="contact.html" class="btn btn--primary">Book Your Free Trial</a>
@@ -301,6 +259,7 @@
             <li><a href="../index.html" class="footer__link">Home</a></li>
             <li><a href="about.html" class="footer__link">About</a></li>
             <li><a href="programs.html" class="footer__link">Programs</a></li>
+            <li><a href="curriculum.html" class="footer__link">Curriculum</a></li>
             <li><a href="gallery.html" class="footer__link">Gallery</a></li>
             <li><a href="contact.html" class="footer__link">Contact</a></li>
           </ul>
@@ -311,6 +270,8 @@
             <li><a href="programs.html#foundation" class="footer__link">Foundation</a></li>
             <li><a href="programs.html#intermediate" class="footer__link">Intermediate</a></li>
             <li><a href="programs.html#performance" class="footer__link">Performance Lab</a></li>
+            <li><a href="programs.html#songwriting" class="footer__link">Songwriting &amp; Music Production</a></li>
+            <li><a href="programs.html#musicsoul" class="footer__link">Music for Soul</a></li>
           </ul>
         </div>
         <div>

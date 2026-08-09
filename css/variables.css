@@ -78,6 +78,14 @@
   --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.6);
   --shadow-gold: 0 0 0 1px var(--color-border-gold),
                  0 4px 24px rgba(200, 155, 60, 0.12);
+  --shadow-gold-strong: 0 4px 20px rgba(200, 155, 60, 0.35);
+
+  /* --- Themed gradients & surfaces --- */
+  --navbar-bg:    rgba(11, 11, 11, 0.92);
+  --glow-hero:    radial-gradient(ellipse at 70% 50%, rgba(200, 155, 60, 0.08) 0%, transparent 60%);
+  --glow-card:    radial-gradient(circle, rgba(200, 155, 60, 0.06) 0%, transparent 70%);
+  --color-hero-text:     rgba(245, 242, 235, 0.8);
+  --color-hero-text-soft: rgba(245, 242, 235, 0.5);
 
   /* --- Transitions --- */
   --duration-fast:    200ms;
@@ -102,4 +110,42 @@
   /* --- Navbar --- */
   --navbar-h:         5rem;    /* 80px desktop */
   --navbar-h-mobile:  4.25rem; /* 68px mobile  */
+}
+
+/* ============================================================
+   Light Theme
+   Dark palette → off-white + purple (#663399).
+   Applied when <html data-theme="light">.
+   ============================================================ */
+[data-theme="light"] {
+  --color-bg:           #f5f5f5;
+  --color-surface:      #ececec;
+  --color-card:         #ffffff;
+  --color-border:       rgba(0, 0, 0, 0.10);
+  --color-border-gold:  rgba(102, 51, 153, 0.35);
+
+  --color-gold:         #663399;
+  --color-gold-hover:   #7a46ab;
+  --color-gold-muted:   rgba(102, 51, 153, 0.12);
+
+  --color-text:         #111111;
+  --color-text-muted:   #5f5f5f;
+  --color-text-dim:     #6e6e6e;
+
+  --color-overlay:      rgba(0, 0, 0, 0.55);
+
+  /* --- Shadows --- */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 0 0 1px rgba(102, 51, 153, 0.25),
+                 0 4px 24px rgba(102, 51, 153, 0.12);
+  --shadow-gold-strong: 0 4px 20px rgba(102, 51, 153, 0.28);
+
+  /* --- Themed gradients & surfaces --- */
+  --navbar-bg:    rgba(245, 245, 245, 0.94);
+  --glow-hero:    radial-gradient(ellipse at 70% 50%, rgba(102, 51, 153, 0.12) 0%, transparent 60%);
+  --glow-card:    radial-gradient(circle, rgba(102, 51, 153, 0.06) 0%, transparent 70%);
+  --color-hero-text:      #4a4a4a;
+  --color-hero-text-soft: #6a6a6a;
 }

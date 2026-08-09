@@ -78,7 +78,7 @@ h4 { font-size: var(--text-h4); }
 
 .hero__subtitle {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: rgba(245, 242, 235, 0.8);
+  color: var(--color-hero-text);
   max-width: 52ch;
   line-height: var(--leading-normal);
   margin-bottom: var(--space-6);
@@ -106,4 +106,9 @@ h4 { font-size: var(--text-h4); }
   font-weight: var(--weight-bold);
   color: var(--color-gold);
   line-height: var(--leading-snug);
+}
+
+.motto--center {
+  text-align: center;
+  margin-inline: auto;
 }

@@ -7,9 +7,13 @@ import { initAnimations, initCounters, initCarousel } from './animations.js';
 import { initGallery } from './gallery.js';
 import { initContact } from './contact.js';
 import { initFAQ } from './faq.js';
+import { initCourseCards } from './courses.js';
+import { initTheme } from './theme.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initTheme();
+  initCourseCards();
   initAnimations();
   initCounters();
   initCarousel();

@@ -6,6 +6,13 @@
   <title>Gallery | The Music Factory by Archit</title>
   <meta name="description" content="Browse photos from classes, live performances, Music Circle events, graduation showcases, practice sessions and studio moments at The Music Factory." />
   <meta name="theme-color" content="#0B0B0B" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,9 +48,15 @@
           <li><a href="../index.html" class="navbar__link">Home</a></li>
           <li><a href="about.html" class="navbar__link">About</a></li>
           <li><a href="programs.html" class="navbar__link">Programs</a></li>
+          <li><a href="curriculum.html" class="navbar__link">Curriculum</a></li>
           <li><a href="gallery.html" class="navbar__link active" aria-current="page">Gallery</a></li>
           <li><a href="contact.html" class="navbar__link">Contact</a></li>
         </ul>
+        <button class="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light theme">
+          <span class="theme-toggle__knob" aria-hidden="true"></span>
+          <span class="theme-toggle__label theme-toggle__label--dark">Dark</span>
+          <span class="theme-toggle__label theme-toggle__label--light">Light</span>
+        </button>
         <a href="contact.html" class="btn btn--primary navbar__cta">Book a Trial</a>
         <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span><span></span><span></span>
@@ -55,6 +68,7 @@
       <a href="../index.html" class="nav__drawer-link">Home</a>
       <a href="about.html" class="nav__drawer-link">About</a>
       <a href="programs.html" class="nav__drawer-link">Programs</a>
+      <a href="curriculum.html" class="nav__drawer-link">Curriculum</a>
       <a href="gallery.html" class="nav__drawer-link">Gallery</a>
       <a href="contact.html" class="nav__drawer-link">Contact</a>
       <a href="contact.html" class="btn btn--primary mt-6">Book a Trial</a>
@@ -153,7 +167,7 @@
         </p>
         <div class="cta-section__actions fade-up">
           <a href="contact.html" class="btn btn--primary">Book Your Free Trial</a>
-          <a href="programs.html" class="btn btn--outline">Explore the Year One Program</a>
+          <a href="programs.html" class="btn btn--outline">Explore Our Programs</a>
         </div>
       </div>
     </section>
@@ -184,6 +198,7 @@
             <li><a href="../index.html" class="footer__link">Home</a></li>
             <li><a href="about.html" class="footer__link">About</a></li>
             <li><a href="programs.html" class="footer__link">Programs</a></li>
+            <li><a href="curriculum.html" class="footer__link">Curriculum</a></li>
             <li><a href="gallery.html" class="footer__link">Gallery</a></li>
             <li><a href="contact.html" class="footer__link">Contact</a></li>
           </ul>
@@ -194,6 +209,8 @@
             <li><a href="programs.html#foundation" class="footer__link">Foundation</a></li>
             <li><a href="programs.html#intermediate" class="footer__link">Intermediate</a></li>
             <li><a href="programs.html#performance" class="footer__link">Performance Lab</a></li>
+            <li><a href="programs.html#songwriting" class="footer__link">Songwriting &amp; Music Production</a></li>
+            <li><a href="programs.html#musicsoul" class="footer__link">Music for Soul</a></li>
           </ul>
         </div>
         <div>

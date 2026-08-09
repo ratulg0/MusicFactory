@@ -6,6 +6,13 @@
   <title>The Music Factory by Archit | Learn Music. Express Yourself. Own the Stage.</title>
   <meta name="description" content="Premium music academy in Dehradun offering structured music education, performance-focused learning and small batch classes for all ages." />
   <meta name="theme-color" content="#0B0B0B" />
+  <script>
+    (function () {
+      var t = 'dark';
+      try { t = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preload" href="assets/images/hero.svg" as="image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,9 +57,15 @@
           <li><a href="index.html" class="navbar__link active" aria-current="page">Home</a></li>
           <li><a href="pages/about.html" class="navbar__link">About</a></li>
           <li><a href="pages/programs.html" class="navbar__link">Programs</a></li>
+          <li><a href="pages/curriculum.html" class="navbar__link">Curriculum</a></li>
           <li><a href="pages/gallery.html" class="navbar__link">Gallery</a></li>
           <li><a href="pages/contact.html" class="navbar__link">Contact</a></li>
         </ul>
+        <button class="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light theme">
+          <span class="theme-toggle__knob" aria-hidden="true"></span>
+          <span class="theme-toggle__label theme-toggle__label--dark">Dark</span>
+          <span class="theme-toggle__label theme-toggle__label--light">Light</span>
+        </button>
         <a href="pages/contact.html" class="btn btn--primary navbar__cta">Book a Trial</a>
         <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span><span></span><span></span>
@@ -65,6 +78,7 @@
       <a href="index.html" class="nav__drawer-link">Home</a>
       <a href="pages/about.html" class="nav__drawer-link">About</a>
       <a href="pages/programs.html" class="nav__drawer-link">Programs</a>
+      <a href="pages/curriculum.html" class="nav__drawer-link">Curriculum</a>
       <a href="pages/gallery.html" class="nav__drawer-link">Gallery</a>
       <a href="pages/contact.html" class="nav__drawer-link">Contact</a>
       <a href="pages/contact.html" class="btn btn--primary mt-6">Book a Trial</a>
@@ -102,7 +116,7 @@
             <div class="hero__stat-label">Years of Excellence</div>
           </div>
           <div>
-            <div class="hero__stat-number" data-count="3">0</div>
+            <div class="hero__stat-number" data-count="5">0</div>
             <div class="hero__stat-label">Structured Programs</div>
           </div>
         </div>
@@ -159,60 +173,68 @@
       <div class="container">
         <div class="section-header section-header--center fade-up">
           <p class="eyebrow">What We Offer</p>
-          <h2 id="programs-heading" class="section-header__title">One Journey. Three Stages.</h2>
+          <h2 id="programs-heading" class="section-header__title">Five Programs. One Journey.</h2>
           <p class="section-header__body">
-            Our programs are designed as a continuous path — from your very first note to performing on stage.
+            Five structured programs for beginners, developing musicians, performers, aspiring creators and working professionals — each focused on practical learning, musical understanding and personal expression.
           </p>
         </div>
-        <div class="cards-3 stagger">
-          <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </div>
-            <div class="program-card__level">Stage 01</div>
-            <h3 class="program-card__title">Foundation</h3>
-            <p class="program-card__desc">
-              Build your musical foundation. Rhythm, basic theory, ear training and your first instrument steps. Perfect for beginners of all ages.
+        <div class="course-list stagger" data-course-cards></div>
+        <noscript>
+          <p class="section-header__body">Our five programs: Foundation, Intermediate, Performance Lab, Songwriting &amp; Music Production, and Music for Soul. Enable JavaScript to explore each course in detail.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ===== CURRICULUM ===== -->
+    <section class="section section--surface" aria-labelledby="curriculum-heading">
+      <div class="container">
+        <div class="split">
+          <div class="split__content fade-left">
+            <p class="eyebrow">Daily Curriculum</p>
+            <h2 id="curriculum-heading" class="section-header__title">Small Batches.<br>Real Ensembles.</h2>
+            <hr class="divider" />
+            <p class="section-header__body">
+              Every class is a 60-minute journey — warm-up, rhythm, theory, instrument time, ear training and ensemble practice — in tiny mixed batches of five to six students, three days a week.
             </p>
-            <div class="program-card__tags">
-              <span class="tag">Beginners</span>
-              <span class="tag">All Ages</span>
-              <span class="tag">Theory</span>
+            <div class="tags-row mt-3">
+              <span class="tag">6 Days a Week</span>
+              <span class="tag">5–6 per Batch</span>
+              <span class="tag">60-Minute Classes</span>
+              <span class="tag">Music Circles</span>
             </div>
-            <a href="pages/programs.html#foundation" class="btn btn--ghost mt-3">Learn More →</a>
-          </article>
-          <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>
+            <div class="mt-6 flex-col gap-2">
+              <a href="pages/curriculum.html" class="btn btn--primary">Explore the Curriculum</a>
+              <a href="pages/contact.html" class="btn btn--ghost">Schedule a Visit →</a>
             </div>
-            <div class="program-card__level">Stage 02</div>
-            <h3 class="program-card__title">Intermediate</h3>
-            <p class="program-card__desc">
-              Deepen your technique, explore genres, and develop your personal musical voice. Small batches ensure focused attention.
-            </p>
-            <div class="program-card__tags">
-              <span class="tag">Intermediate</span>
-              <span class="tag">Small Batch</span>
-              <span class="tag">Genre Exploration</span>
+          </div>
+          <div class="split__image fade-right">
+            <div class="schedule-preview">
+              <div class="schedule-preview__title">
+                <span>Weekly Batches</span>
+                <span>Mon – Sat</span>
+              </div>
+              <div class="schedule-preview__row">
+                <span class="schedule-preview__time">3 – 4 PM</span>
+                <span class="schedule-preview__name">Batch 1</span>
+                <span class="tag">Children</span>
+              </div>
+              <div class="schedule-preview__row">
+                <span class="schedule-preview__time">4 – 5 PM</span>
+                <span class="schedule-preview__name">Batch 2</span>
+                <span class="tag">Children / Teenagers</span>
+              </div>
+              <div class="schedule-preview__row">
+                <span class="schedule-preview__time">5 – 6 PM</span>
+                <span class="schedule-preview__name">Batch 3</span>
+                <span class="tag">Teenagers</span>
+              </div>
+              <div class="schedule-preview__row">
+                <span class="schedule-preview__time">7 – 8 PM</span>
+                <span class="schedule-preview__name">Batch 4</span>
+                <span class="tag">Working Professionals</span>
+              </div>
             </div>
-            <a href="pages/programs.html#intermediate" class="btn btn--ghost mt-3">Learn More →</a>
-          </article>
-          <article class="program-card fade-up">
-            <div class="program-card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
-            </div>
-            <div class="program-card__level">Stage 03</div>
-            <h3 class="program-card__title">Performance Lab</h3>
-            <p class="program-card__desc">
-              Real stage experience. Live performance coaching, ensemble playing, and the confidence to own any room you walk into.
-            </p>
-            <div class="program-card__tags">
-              <span class="tag">Advanced</span>
-              <span class="tag">Live Performance</span>
-              <span class="tag">Ensemble</span>
-            </div>
-            <a href="pages/programs.html#performance" class="btn btn--ghost mt-3">Learn More →</a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -385,6 +407,7 @@
             <li><a href="index.html" class="footer__link">Home</a></li>
             <li><a href="pages/about.html" class="footer__link">About</a></li>
             <li><a href="pages/programs.html" class="footer__link">Programs</a></li>
+            <li><a href="pages/curriculum.html" class="footer__link">Curriculum</a></li>
             <li><a href="pages/gallery.html" class="footer__link">Gallery</a></li>
             <li><a href="pages/contact.html" class="footer__link">Contact</a></li>
           </ul>
@@ -395,6 +418,8 @@
             <li><a href="pages/programs.html#foundation" class="footer__link">Foundation</a></li>
             <li><a href="pages/programs.html#intermediate" class="footer__link">Intermediate</a></li>
             <li><a href="pages/programs.html#performance" class="footer__link">Performance Lab</a></li>
+            <li><a href="pages/programs.html#songwriting" class="footer__link">Songwriting &amp; Music Production</a></li>
+            <li><a href="pages/programs.html#musicsoul" class="footer__link">Music for Soul</a></li>
           </ul>
         </div>
         <div>
