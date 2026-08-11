@@ -14,6 +14,12 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Prevent horizontal page scroll on all devices. Must be on html (root),
+     not only body — body alone is unreliable on iOS Safari/older browsers.
+     `clip` (when supported) also prevents programmatic panning; `hidden`
+     remains the fallback. */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -26,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Lock scroll when mobile menu is open */
@@ -33,10 +40,20 @@ body.menu-open {
   overflow: hidden;
 }
 
-img, video, svg {
-  display: block;
+/* --- Media: fluid by default on every device --- */
+img, video, iframe, embed, object, svg, canvas {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
+}
+
+img, video, svg, canvas {
+  display: block;
+}
+
+iframe, embed, object {
+  display: block;
+  border: 0;
 }
 
 ul, ol {

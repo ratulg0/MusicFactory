@@ -69,6 +69,19 @@
   gap: var(--space-4);
 }
 
+/* Grid items default to min-width:auto, which lets wide media, tables or
+   long words force their column wider than the viewport. Allowing shrink
+   keeps every layout fluid at any screen width. */
+.cards-2 > *,
+.cards-3 > *,
+.split > *,
+.gallery-grid > *,
+.contact-grid > *,
+.footer__grid > *,
+.philosophy-strip > *,
+.lesson-step > *,
+.group-card__days > * { min-width: 0; }
+
 /* 2-col split layout (image + text) */
 .split {
   display: grid;
@@ -76,6 +89,8 @@
   gap: var(--space-8);
   align-items: center;
 }
+
+.split__image { min-width: 0; }
 
 .split--reverse .split__image { order: 2; }
 .split--reverse .split__content { order: 1; }
