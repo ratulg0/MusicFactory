@@ -93,3 +93,56 @@
   .program-card { padding: var(--space-4); }
   .testimonial-card { padding: var(--space-4); }
 }
+
+/* ---- Tables below desktop: stacked cards, never side-scroll ---- */
+/* Phone & tablet screens get each table row as a labelled card so no
+   content ever needs horizontal scrolling on a small device. */
+@media (max-width: 1024px) {
+  .table-wrap {
+    overflow-x: visible;
+    border: none;
+    background: none;
+  }
+
+  .data-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .data-table thead { display: none; }
+
+  .data-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .data-table tbody tr {
+    display: block;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .data-table tbody tr:hover { background-color: var(--color-card); }
+
+  .data-table td {
+    display: block;
+    border: none;
+    padding: var(--space-1) 0;
+    white-space: normal;
+  }
+
+  .data-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 0.25rem;
+  }
+}
