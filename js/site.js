@@ -21,6 +21,93 @@
 (function () {
   'use strict';
 
+  /* ============ Cross-browser polyfills & safe helpers ============
+     These make the site run on EVERY browser (old Edge, IE11, old
+     Safari...). Modern browsers already have all of these natively,
+     so the guards below are no-ops there. */
+
+  // Element.closest (IE11 / Edge < 15)
+  if (typeof Element !== 'undefined' && !Element.prototype.closest) {
+    Element.prototype.closest = function (sel) {
+      var el = this;
+      while (el && el.nodeType === 1) {
+        if (el.msMatchesSelector ? el.msMatchesSelector(sel) :
+            (el.matches && el.matches(sel))) return el;
+        el = el.parentElement || el.parentNode;
+      }
+      return null;
+    };
+  }
+  function closest(el, sel) {
+    if (!el) return null;
+    if (el.closest) { try { return el.closest(sel); } catch (e) {} }
+    // Manual fallback if even the polyfill is unavailable.
+    var node = el;
+    while (node && node.nodeType === 1) {
+      var matches = node.msMatchesSelector || node.matches || node.webkitMatchesSelector;
+      if (matches) { try { if (matches.call(node, sel)) return node; } catch (e2) {} }
+      node = node.parentElement || node.parentNode;
+    }
+    return null;
+  }
+
+  // requestAnimationFrame (IE9 and older)
+  if (typeof window !== 'undefined' && !window.requestAnimationFrame) {
+    window.requestAnimationFrame = function (cb) { return setTimeout(function () { cb(Date.now()); }, 16); };
+    window.cancelAnimationFrame = function (id) { clearTimeout(id); };
+  }
+
+  // performance.now (old browsers)
+  if (typeof window !== 'undefined' && (!window.performance || !window.performance.now)) {
+    var __t0 = Date.now();
+    window.performance = window.performance || {};
+    window.performance.now = function () { return Date.now() - __t0; };
+  }
+
+  // Safe matchMedia: returns false when unsupported.
+  function mediaMatches(query) {
+    try {
+      if (window.matchMedia) return window.matchMedia(query).matches;
+    } catch (e) {}
+    return false;
+  }
+
+  // Safe vertical scroll position (window.scrollY is undefined in old IE).
+  function getScrollY() {
+    if (typeof window.pageYOffset !== 'undefined') return window.pageYOffset;
+    if (document.documentElement && document.documentElement.scrollTop) return document.documentElement.scrollTop;
+    if (document.body && document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+  }
+
+  // Safe data-* access (dataset is missing in IE9 and older).
+  function getData(el, name) {
+    if (!el) return null;
+    try {
+      if (el.dataset && typeof el.dataset[name] !== 'undefined') return el.dataset[name];
+    } catch (e) {}
+    try { return el.getAttribute('data-' + name.replace(/([A-Z])/g, '-$1').toLowerCase()); }
+    catch (e2) { return null; }
+  }
+
+  // Smooth scroll with instant fallback (old browsers ignore `behavior`).
+  function smoothScrollTo(top) {
+    try { window.scrollTo({ top: top, behavior: 'smooth' }); }
+    catch (e) {
+      try { window.scrollTo(0, top); }
+      catch (e2) {
+        document.documentElement.scrollTop = top;
+        document.body.scrollTop = top;
+      }
+    }
+  }
+  function scrollElBy(el, dx) {
+    try {
+      if (el.scrollBy) { el.scrollBy({ left: dx, behavior: 'smooth' }); return; }
+    } catch (e) {}
+    el.scrollLeft += dx;
+  }
+
   /* ---------------- Shared utilities (from js/utils.js) ---------------- */
   function throttle(fn, delay) {
     delay = delay === undefined ? 100 : delay;
@@ -201,7 +288,7 @@
 
     var onScroll = throttle(function () {
       var bar = navbar.querySelector('.navbar');
-      if (bar) bar.classList.toggle('scrolled', window.scrollY > 80);
+      if (bar) bar.classList.toggle('scrolled', getScrollY() > 80);
     }, 100);
     window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -305,14 +392,14 @@
               var isOpen = btn.getAttribute('aria-expanded') === 'true';
               for (var k = 0; k < headers.length; k++) {
                 headers[k].setAttribute('aria-expanded', 'false');
-                var card = headers[k].closest('.course-card');
+                var card = closest(headers[k], '.course-card');
                 if (card) card.classList.remove('is-open');
                 var b = document.getElementById(headers[k].getAttribute('aria-controls'));
                 if (b) b.setAttribute('aria-hidden', 'true');
               }
               if (!isOpen) {
                 btn.setAttribute('aria-expanded', 'true');
-                var self = btn.closest('.course-card');
+                var self = closest(btn, '.course-card');
                 if (self) self.classList.add('is-open');
                 var body = document.getElementById(btn.getAttribute('aria-controls'));
                 if (body) body.setAttribute('aria-hidden', 'false');
@@ -326,7 +413,7 @@
 
   /* ---------------- Animations (from js/animations.js) ---------------- */
   function initAnimations() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (mediaMatches('(prefers-reduced-motion: reduce)')) {
       var els = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
       for (var i = 0; i < els.length; i++) els[i].classList.add('is-visible');
       return;
@@ -360,14 +447,16 @@
     var counters = document.querySelectorAll('[data-count]');
     if (!counters.length) return;
     function animate(el) {
-      var target = parseInt(el.dataset.count, 10);
+      var target = parseInt(getData(el, 'count'), 10);
       if (isNaN(target)) return;
+      var suffix = getData(el, 'suffix') || '';
       var duration = 1500;
-      var start = performance.now();
+      var start = (window.performance && window.performance.now) ? window.performance.now() : Date.now();
       function tick(now) {
+        if (typeof now !== 'number') now = Date.now();
         var progress = Math.min((now - start) / duration, 1);
         var ease = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(ease * target) + (el.dataset.suffix || '');
+        el.textContent = Math.round(ease * target) + suffix;
         if (progress < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -394,17 +483,19 @@
     if (!track || !prev || !next) return;
     var card = track.querySelector('.testimonial-card');
     function step() {
-      if (window.matchMedia('(min-width: 1025px)').matches) return 0;
+      if (mediaMatches('(min-width: 1025px)')) return 0;
       if (!card) return track.clientWidth;
-      return Math.max(card.getBoundingClientRect().width + card.clientLeft, 0);
+      var w = 0;
+      try { w = card.getBoundingClientRect().width + card.clientLeft; } catch (e) { w = track.clientWidth; }
+      return Math.max(w, 0);
     }
     prev.addEventListener('click', function () {
       var s = step();
-      if (s) track.scrollBy({ left: -s, behavior: 'smooth' });
+      if (s) scrollElBy(track, -s);
     });
     next.addEventListener('click', function () {
       var s = step();
-      if (s) track.scrollBy({ left: s, behavior: 'smooth' });
+      if (s) scrollElBy(track, s);
     });
   }
 
@@ -419,14 +510,14 @@
     if (!filters.length || !items.length) return;
     filters.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var filter = btn.dataset.filter;
+        var filter = getData(btn, 'filter');
         filters.forEach(function (b) {
           var on = b === btn;
           b.classList.toggle('is-active', on);
           b.setAttribute('aria-pressed', String(on));
         });
         items.forEach(function (item) {
-          var show = filter === 'all' || item.dataset.category === filter;
+          var show = filter === 'all' || getData(item, 'category') === filter;
           item.classList.toggle('is-hidden', !show);
         });
       });
@@ -451,9 +542,11 @@
       items = getItems();
       if (!items.length) return;
       current = (i + items.length) % items.length;
-      lightboxImg.src = items[current].dataset.src;
-      lightboxImg.alt = items[current].dataset.caption || '';
-      if (caption) caption.textContent = items[current].dataset.caption || '';
+      var src = getData(items[current], 'src');
+      var cap = getData(items[current], 'caption') || '';
+      if (src) lightboxImg.src = src;
+      lightboxImg.alt = cap;
+      if (caption) caption.textContent = cap;
     }
     function open(index) {
       render(index);
@@ -470,7 +563,7 @@
       render(current + dir);
       [1, -1].forEach(function (d) {
         var idx = (current + d + items.length) % items.length;
-        if (items[idx]) { var img = new Image(); img.src = items[idx].dataset.src; }
+        if (items[idx]) { var img = new Image(); img.src = getData(items[idx], 'src'); }
       });
     }
     getItems().forEach(function (item) {
@@ -579,23 +672,38 @@
   }
 
   /* ---------------- Boot (from js/main.js) ---------------- */
-  function boot() {
-    initNavbar();
-    initTheme();
-    initCourseCards();
-    initAnimations();
-    initCounters();
-    initCarousel();
-    initGallery();
-    initContact();
-    initFAQ();
-    var btn = document.querySelector('.back-to-top');
-    if (btn) {
-      window.addEventListener('scroll', function () {
-        btn.classList.toggle('visible', window.scrollY > 400);
-      }, { passive: true });
-      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  function safeRun(name, fn) {
+    try { fn(); }
+    catch (e) {
+      // One broken widget must never take down the whole page.
+      // Surface the error for debugging, but keep the site usable.
+      if (window.console && console.error) console.error('[MusicFactory] ' + name + ' failed:', e);
+      // If reveal-on-scroll broke, unhide content so nothing stays invisible.
+      try {
+        var stuck = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');
+        for (var i = 0; i < stuck.length; i++) stuck[i].classList.add('is-visible');
+      } catch (e2) {}
     }
+  }
+  function boot() {
+    safeRun('navbar', initNavbar);
+    safeRun('theme', initTheme);
+    safeRun('courses', initCourseCards);
+    safeRun('animations', initAnimations);
+    safeRun('counters', initCounters);
+    safeRun('carousel', initCarousel);
+    safeRun('gallery', initGallery);
+    safeRun('contact', initContact);
+    safeRun('faq', initFAQ);
+    safeRun('back-to-top', function () {
+      var btn = document.querySelector('.back-to-top');
+      if (!btn) return;
+      var onScroll = throttle(function () {
+        btn.classList.toggle('visible', getScrollY() > 400);
+      }, 100);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      btn.addEventListener('click', function () { smoothScrollTo(0); });
+    });
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

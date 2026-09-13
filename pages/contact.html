@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | The Music Factory by Archit</title>
-  <meta name="description" content="Get in touch with The Music Factory in Dehradun. Book a free trial class, ask a question, or reach us by phone, WhatsApp, email or visit our location." />
+  <meta name="description" content="Get in touch with The Music Factory in Mandi, Himachal Pradesh. Book a free trial class, ask a question, or reach us by phone, WhatsApp, email or visit our location." />
   <meta name="theme-color" content="#0B0B0B" />
   <script>
     (function () {
@@ -18,19 +19,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Google Fonts: optional enhancement. Non-blocking so the site renders instantly offline (falls back to Georgia / system fonts). -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <script>
+    /* Font fallback: some Edge configs block the print->all onload trick.
+       Force-apply the font stylesheet after 2.5s if it is still on print. */
+    (function () {
+      setTimeout(function () {
+        try {
+          var links = document.querySelectorAll('link[media="print"]');
+          for (var i = 0; i < links.length; i++) links[i].media = 'all';
+        } catch (e) {}
+      }, 2500);
+    })();
+  </script>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" /></noscript>
-  <link rel="stylesheet" href="../css/style.css?v=2" />
+  <link rel="stylesheet" href="../css/style.css?v=3" />
   <link rel="canonical" href="https://themusicfactory.in/contact" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact | The Music Factory by Archit" />
-  <meta property="og:description" content="Book a free trial class or get in touch with The Music Factory in Dehradun." />
+  <meta property="og:description" content="Book a free trial class or get in touch with The Music Factory in Mandi, Himachal Pradesh." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "The Music Factory by Archit",
     "slogan": "Learn Music. Express Yourself. Own the Stage.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Dehradun", "addressRegion": "Uttarakhand", "addressCountry": "IN" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Mandi", "addressRegion": "Himachal Pradesh", "addressCountry": "IN" },
     "email": "hello@themusicfactory.in",
     "telephone": "+91 00000 00000",
     "openingHours": "Mo-Sa 10:00-19:00",
@@ -101,7 +114,7 @@
 
             <div class="contact-block">
               <h3 class="contact-block__title">Location</h3>
-              <p class="contact-block__text">Dehradun, Uttarakhand, India</p>
+              <p class="contact-block__text">Mandi, Himachal Pradesh, India</p>
             </div>
 
             <div class="contact-block">
@@ -124,14 +137,8 @@
 
             <div class="contact-block">
               <h3 class="contact-block__title">Location Map</h3>
-              <div class="contact-map" aria-label="Map showing Dehradun, Uttarakhand">
-                <svg width="100%" height="100%" viewBox="0 0 400 220" fill="none" stroke="#C89B3C" stroke-width="1.5" role="img" aria-label="Stylised map of Dehradun">
-                  <rect width="400" height="220" fill="#171717"/>
-                  <path d="M60 30 H360 M60 80 H330 M60 130 H350 M60 180 H320" stroke-opacity="0.25"/>
-                  <circle cx="200" cy="110" r="14" fill="#C89B3C" fill-opacity="0.2"/>
-                  <circle cx="200" cy="110" r="5" fill="#C89B3C"/>
-                  <text x="200" y="150" text-anchor="middle" fill="#F5F2EB" font-size="13" font-family="sans-serif">Dehradun, Uttarakhand</text>
-                </svg>
+              <div class="contact-map" aria-label="Map showing Mandi, Himachal Pradesh" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3394.197520768166!2d76.932907!3d31.710498999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDQyJzM3LjgiTiA3NsKwNTUnNTguNSJF!5e0!3m2!1sen!2sin!4v1789298144790!5m2!1sen!2sin" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="The Music Factory location in Mandi, Himachal Pradesh"></iframe>
               </div>
             </div>
 
@@ -182,7 +189,7 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand-name">The Music <span>Factory</span></div>
-          <p class="footer__tagline">Premium music education in Dehradun. Learn music. Express yourself. Own the stage.</p>
+          <p class="footer__tagline">Premium music education in Mandi, Himachal Pradesh. Learn music. Express yourself. Own the stage.</p>
           <div class="footer__social" aria-label="Social media links">
             <a href="#" class="footer__social-link" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -219,14 +226,14 @@
         <div>
           <div class="footer__col-title">Contact</div>
           <ul class="footer__links" role="list">
-            <li><span class="footer__link">Dehradun, Uttarakhand</span></li>
+            <li><span class="footer__link">Mandi, Himachal Pradesh</span></li>
             <li><a href="contact.html" class="footer__link">Book a Trial</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© 2026 The Music Factory by Archit Bisht. All rights reserved.</span>
-        <span>Made with ♪ in Dehradun</span>
+        <span>Made with ♪ in Mandi</span>
       </div>
     </div>
   </footer>
@@ -234,7 +241,7 @@
   <button class="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- Classic script (NOT type="module") so the site works via file:// double-click with zero installs. See ../js/site.js. -->
-  <script src="../js/site.js?v=1" defer></script>
+  <script src="../js/site.js?v=2" defer></script>
 
 </body>
 </html>

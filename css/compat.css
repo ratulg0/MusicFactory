@@ -1,0 +1,134 @@
+/* ============================================================
+   THE MUSIC FACTORY — Cross-browser compatibility layer
+   Loaded LAST so its fallbacks win only where the browser
+   lacks support for modern CSS (old Edge, IE11, old Safari).
+
+   Modern Chrome / Edge (Chromium) / Firefox / Safari ignore
+   every @supports-not block below and render exactly as before.
+   ============================================================ */
+
+/* ---- 1. Browsers without CSS custom properties ---- */
+@supports not (--css: variables) {
+  body {
+    background-color: #0B0B0B;
+    color: #F5F2EB;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 { color: #F5F2EB; }
+  .section--surface { background-color: #171717; }
+  .section--card { background-color: #202020; }
+  .navbar { height: 80px; }
+  .navbar.scrolled { background-color: rgba(11, 11, 11, 0.92); }
+  .navbar__inner { max-width: 1280px; }
+  .navbar__link { color: #A5A5A5; }
+  .btn--primary { background-color: #C89B3C; color: #0B0B0B; }
+  .btn--outline { color: #F5F2EB; border: 1px solid rgba(255, 255, 255, 0.08); }
+  .hero { background-color: #0B0B0B; }
+  .hero__stat-number { color: #C89B3C; }
+  .program-card, .testimonial-card, .course-card,
+  .faq__item, .contact-form, .gallery-masonry__item,
+  .lesson-step, .group-card, .time-bar__capsule,
+  .schedule-preview, .table-wrap, .feature-item__icon {
+    background-color: #202020;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .footer { background-color: #171717; }
+  .tag, .lesson-step__time { background-color: rgba(200, 155, 60, 0.15); color: #C89B3C; }
+  .eyebrow, .hero__eyebrow, .text-gold { color: #C89B3C; }
+  .section-header__body, .footer__tagline { color: #A5A5A5; }
+  .back-to-top { background-color: #C89B3C; color: #0B0B0B; }
+  .form-input, .form-textarea, .form-select {
+    background-color: #202020;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #F5F2EB;
+  }
+  .lightbox { background-color: #000; background-color: rgba(0, 0, 0, 0.92); }
+  .skip-link { background-color: #C89B3C; color: #0B0B0B; }
+}
+
+/* ---- 2. Browsers without logical properties (old Edge) ---- */
+@supports not (margin-inline: auto) {
+  .container { margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
+  .section { padding-top: 120px; padding-bottom: 120px; }
+  .page-hero { padding-top: 120px; padding-bottom: 120px; }
+  .cta-section { padding-top: 120px; padding-bottom: 120px; }
+  .footer { padding-top: 96px; padding-bottom: 48px; }
+  .section-header--center { text-align: center; }
+  .section-header--center .section-header__body,
+  .page-hero__subtitle, .cta-section__body, .motto--center { margin-left: auto; margin-right: auto; }
+  .course-list, .faq { margin-left: auto; margin-right: auto; }
+  .hero__text { margin-left: auto; margin-right: auto; }
+  .hero__content { padding-left: 48px; padding-right: 48px; }
+  .btn--ghost { padding-left: 0; padding-right: 0; }
+  .divider--center { margin-left: auto; margin-right: auto; }
+  .skip-link { left: 16px; }
+  .navbar__inner { margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
+}
+
+/* ---- 3. Browsers without clamp() ---- */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+  h1, .page-hero__title, .cta-section__title { font-size: 2.5rem; }
+  h2, .section-header__title, .hero__stat-number { font-size: 2rem; }
+  h3, .quote { font-size: 1.5rem; }
+  .hero__title { font-size: 2.5rem; }
+  .hero__subtitle { font-size: 1rem; }
+  .motto { font-size: 1.5rem; }
+}
+
+/* ---- 4. Browsers without min()/max() ---- */
+@supports not (width: min(1px, 1vw)) {
+  .nav__drawer { width: 320px; }
+  .data-table { min-width: 32rem; }
+}
+
+/* ---- 5. Accordion fallback (no grid-template-rows animation) ----
+   Old browsers keep content readable: collapsed = hidden off-screen
+   technique, expanded = natural height. */
+@supports not (grid-template-rows: 0fr) {
+  .faq__body, .course-card__body {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease-out;
+  }
+  .faq__body[aria-hidden="false"],
+  .course-card__body[aria-hidden="false"] { max-height: 3000px; }
+}
+
+/* ---- 6. Browsers without aspect-ratio ---- */
+@supports not (aspect-ratio: 4/3) {
+  .gallery-item { min-height: 220px; height: auto; }
+  .gallery-item img { height: 220px; }
+}
+
+/* ---- 7. `inset` longhands for browsers without `inset` ----
+   Same values as the `inset` rules; harmless where `inset` works. */
+.nav__overlay, .hero__bg, .hero__bg::before, .hero__bg::after,
+.gallery-item__overlay, .gallery-masonry__caption, .overlay {
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+.lightbox {
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+/* ---- 8. Keyboard-focus fallback (no :focus-visible support) ----
+   Old browsers drop `:focus:not(:focus-visible)` entirely, so this
+   plain `:focus` rule is their only visible focus style. Modern
+   browsers keep the finer `:focus-visible` behaviour because that
+   selector has higher specificity. */
+a:focus, button:focus, input:focus, textarea:focus, select:focus,
+[tabindex]:focus {
+  outline: 2px solid #C89B3C;
+  outline-offset: 3px;
+}
+
+/* ---- 9. Sticky/fixed safety: never let the fixed navbar trap clicks
+   if backdrop-filter is unsupported (rule is simply ignored there). */
+.navbar { top: 0; left: 0; right: 0; }
+
+/* ---- 10. Old Edge flex-gap degradation: keep wrapped rows readable ---- */
+@supports not (row-gap: 1rem) {
+  .hero__actions .btn { margin: 4px; }
+  .tags-row .tag { margin: 2px; }
+  .gallery-filters .gallery-filter { margin: 4px; }
+}
