@@ -20,6 +20,12 @@ Semantic HTML5, CSS3 (custom properties), vanilla ES modules. No frameworks.
 
 ## Development
 
+No installs needed — just double-click `index.html`. The pages load `js/site.js`, a classic script with zero imports, so everything works over `file://`, offline, on any device.
+
+In VS Code, press `F5` — it opens `index.html` directly in the browser. No local server, Python, or extra setup required.
+
+Optional local server (same result):
+
 ```bash
 python -m http.server 8000
 ```

@@ -17,8 +17,9 @@
   <link rel="preload" href="assets/images/hero.svg" as="image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" />
+  <!-- Google Fonts: optional enhancement. Non-blocking so the site renders instantly offline (falls back to Georgia / system fonts). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="css/style.css?v=2" />
   <link rel="canonical" href="https://themusicfactory.in/" />
   <meta property="og:type" content="website" />
@@ -449,7 +450,8 @@
   <!-- Back to top -->
   <button class="back-to-top" aria-label="Back to top">↑</button>
 
-  <script src="js/main.js" type="module" defer></script>
+  <!-- Classic script (NOT type="module") so the site works via file:// double-click with zero installs. See js/site.js. -->
+  <script src="js/site.js?v=1" defer></script>
 
 </body>
 </html>
