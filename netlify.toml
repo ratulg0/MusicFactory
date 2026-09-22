@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+
+[[plugins]]
+
+[forms]
+  # Netlify Forms spam filtering
+  spam_filter = true
+
+# Email notification for every contact form submission
+[[notifications.email]]
+  event   = "submission_created"
+  form    = "contact"
+  to      = "hello@themusicfactory.in"
+  subject = "New enquiry from {{name}} — The Music Factory"
