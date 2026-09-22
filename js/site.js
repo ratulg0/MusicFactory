@@ -599,8 +599,8 @@
   function initContact() {
     var form = document.querySelector('.contact-form');
     if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+
+    function validate() {
       var valid = true;
       var fields = form.querySelectorAll('[required]');
       for (var i = 0; i < fields.length; i++) {
@@ -620,22 +620,48 @@
           }
         })(fields[i]);
       }
-      if (valid) {
-        var btn = form.querySelector('[type="submit"]');
-        var status = form.querySelector('.form-status');
-        btn.textContent = 'Sending\u2026';
-        btn.disabled = true;
-        setTimeout(function () {
-          btn.textContent = 'Message Sent!';
+      return valid;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) return;
+
+      var btn    = form.querySelector('[type="submit"]');
+      var status = form.querySelector('.form-status');
+      btn.textContent = 'Sending\u2026';
+      btn.disabled = true;
+
+      fetch('/', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:    new URLSearchParams(new FormData(form)).toString()
+      }).then(function (res) {
+        if (res.ok) {
+          btn.textContent = 'Message Sent \u2713';
           if (status) {
-            status.textContent = 'Thank you! We have received your message and will get back to you soon.';
+            status.textContent = 'Thank you! We\'ve received your message and will get back to you soon.';
             status.classList.remove('visually-hidden');
           }
           form.reset();
-          setTimeout(function () { btn.textContent = 'Send Message'; btn.disabled = false; }, 4000);
-        }, 900);
-      }
+          setTimeout(function () {
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+            if (status) status.classList.add('visually-hidden');
+          }, 5000);
+        } else {
+          throw new Error('server error');
+        }
+      }).catch(function () {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        if (status) {
+          status.textContent = 'Something went wrong. Please email us directly at hello@themusicfactory.in';
+          status.classList.remove('visually-hidden');
+        }
+      });
     });
+
     var live = form.querySelectorAll('[required]');
     for (var j = 0; j < live.length; j++) {
       (function (field) {
