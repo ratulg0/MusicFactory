@@ -1,8 +1,6 @@
 [build]
   publish = "."
 
-[[plugins]]
-
 [forms]
   # Netlify Forms spam filtering
   spam_filter = true
