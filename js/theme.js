@@ -10,6 +10,18 @@ function currentTheme() {
   return document.documentElement.getAttribute('data-theme') || 'dark';
 }
 
+export function updateThemeImages(theme) {
+  const t = theme || currentTheme();
+  document.querySelectorAll('img[data-light-src]').forEach(img => {
+    const src = t === 'light' ? img.getAttribute('data-light-src') : img.getAttribute('data-dark-src');
+    if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
+  });
+  document.querySelectorAll('.gallery-masonry__item[data-light-src], .gallery-item[data-light-src]').forEach(fig => {
+    const src = t === 'light' ? fig.getAttribute('data-light-src') : fig.getAttribute('data-dark-src');
+    if (src) fig.setAttribute('data-src', src);
+  });
+}
+
 export function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   document.querySelectorAll('.theme-toggle').forEach(btn => {
@@ -18,6 +30,7 @@ export function applyTheme(theme) {
   document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
     meta.setAttribute('content', theme === 'dark' ? '#0B0B0B' : '#f5f5f5');
   });
+  updateThemeImages(theme);
 }
 
 export function initTheme() {

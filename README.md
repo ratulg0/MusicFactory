@@ -15,7 +15,7 @@ Semantic HTML5, CSS3 (custom properties), vanilla ES modules. No frameworks.
 - `pages/contact.html` — contact details, map, validated form, WhatsApp CTA
 - `css/` — variables, reset, typography, layout, components, animations, utilities, responsive (imported by `style.css`)
 - `js/` — main, navbar, animations, gallery, contact, faq, utils (ES modules)
-- `assets/images/` — SVG placeholders; replace with real academy photography (WebP preferred) before launch
+- `assets/images/photos/MusicRoom_Curated_Retouched/{light,dark}/` — curated academy photography (theme-aware via `data-light-src`/`data-dark-src`, swapped by `js/theme.js`); see `MUSICROOM_AGENT_PHOTO_PLACEMENT.md` for the placement map
 - `sitemap.xml`, `robots.txt` — SEO
 
 ## Development
@@ -36,6 +36,6 @@ Docs in `MusicFacortyWebsiteData/` are the source of truth: dark luxury theme (`
 
 ## Before deployment
 
-- Replace placeholder SVGs with real photos (WebP) and update `assets/images/hero.svg` preload.
+- Photos are integrated (Home 4, About 3 — story, founder `gallery_live_vocal_closeup.jpg`, performance — Gallery 12).
 - Update phone/email/WhatsApp/social links in `pages/contact.html` and JSON-LD schema.
 - Set domain `themusicfactory.in` in canonical/OG/sitemap URLs if different.

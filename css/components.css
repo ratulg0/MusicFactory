@@ -256,15 +256,7 @@
   opacity: 0.55;
 }
 
-[data-theme="light"] .hero__bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/images/hero-light.svg');
-  background-size: cover;
-  background-position: center;
-}
-[data-theme="light"] .hero__bg img { opacity: 0; }
+[data-theme="light"] .hero__bg img { opacity: 0.55; }
 
 .hero__bg::after {
   content: '';
@@ -1305,6 +1297,33 @@
 }
 
 .schedule-preview__row .tag { margin-left: auto; width: max-content; }
+
+/* --- Curated photography slots (MusicRoom photo package) --- */
+.split-photo {
+  aspect-ratio: 16 / 10;
+  margin-bottom: var(--space-4);
+}
+
+.programs-photo {
+  max-width: 46rem;
+  margin: 0 auto var(--space-6);
+}
+
+.programs-photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+/* About story/founder portraits: cap height so the photo matches its text column */
+.about-story-photo {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  max-height: 380px;
+}
 
 /* --- Data tables (schedule & instrument mapping) --- */
 .table-wrap {

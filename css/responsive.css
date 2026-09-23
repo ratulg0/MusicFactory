@@ -94,6 +94,12 @@
   .testimonial-card { padding: var(--space-4); }
 }
 
+/* ---- Curated photos: keep natural crops on small screens ---- */
+@media (max-width: 768px) {
+  .programs-photo img { aspect-ratio: 16 / 10; }
+  .split-photo { aspect-ratio: 4 / 3; }
+}
+
 /* ---- Tables below desktop: stacked cards, never side-scroll ---- */
 /* Phone & tablet screens get each table row as a labelled card so no
    content ever needs horizontal scrolling on a small device. */

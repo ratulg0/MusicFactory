@@ -254,6 +254,19 @@
   function currentTheme() {
     return document.documentElement.getAttribute('data-theme') || 'dark';
   }
+  function updateThemeImages(theme) {
+    var t = theme || currentTheme();
+    var imgs = document.querySelectorAll('img[data-light-src]');
+    for (var i = 0; i < imgs.length; i++) {
+      var src = t === 'light' ? imgs[i].getAttribute('data-light-src') : imgs[i].getAttribute('data-dark-src');
+      if (src && imgs[i].getAttribute('src') !== src) imgs[i].setAttribute('src', src);
+    }
+    var figs = document.querySelectorAll('.gallery-masonry__item[data-light-src], .gallery-item[data-light-src]');
+    for (var k = 0; k < figs.length; k++) {
+      var fsrc = t === 'light' ? figs[k].getAttribute('data-light-src') : figs[k].getAttribute('data-dark-src');
+      if (fsrc) figs[k].setAttribute('data-src', fsrc);
+    }
+  }
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     var toggles = document.querySelectorAll('.theme-toggle');
@@ -264,6 +277,7 @@
     for (var j = 0; j < metas.length; j++) {
       metas[j].setAttribute('content', theme === 'dark' ? '#0B0B0B' : '#f5f5f5');
     }
+    updateThemeImages(theme);
   }
   function initTheme() {
     var toggles = document.querySelectorAll('.theme-toggle');
