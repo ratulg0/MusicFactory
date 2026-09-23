@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Animations Module
+ * THE MUSIC ROOM — Animations Module
  * IntersectionObserver scroll reveals, respects prefers-reduced-motion
  */
 

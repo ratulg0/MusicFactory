@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Navbar Module
+ * THE MUSIC ROOM — Navbar Module
  * Scroll state, mobile drawer, focus trap, ESC close
  */
 import { throttle, focusTrap } from './utils.js';

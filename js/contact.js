@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Contact Form
+ * THE MUSIC ROOM — Contact Form
  * Validates and submits to Netlify Forms via fetch.
  */
 

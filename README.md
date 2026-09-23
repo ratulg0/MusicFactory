@@ -1,6 +1,6 @@
-# MusicFactory
+# MusicRoom
 
-Premium website for **The Music Factory by Archit** — a music academy in Dehradun.
+Premium website for **The Music Room by Archit** — a music academy in Dehradun.
 
 ## Stack
 

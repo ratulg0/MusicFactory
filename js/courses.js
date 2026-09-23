@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Courses Module
+ * THE MUSIC ROOM — Courses Module
  * Renders the five programs as accessible expanding cards and wires up
  * the accordion behaviour (one panel open at a time, keyboard friendly).
  */

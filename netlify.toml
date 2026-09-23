@@ -10,4 +10,4 @@
   event   = "submission_created"
   form    = "contact"
   to      = "hello@themusicfactory.in"
-  subject = "New enquiry from {{name}} — The Music Factory"
+  subject = "New enquiry from {{name}} — The Music Room"

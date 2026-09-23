@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Course Data
+ * THE MUSIC ROOM — Course Data
  * Single source of truth for the five programs. Rendered as expanding
  * cards by courses.js on the Home and Programs pages.
  */

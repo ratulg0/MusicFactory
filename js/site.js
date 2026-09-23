@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Portable site bundle (classic script, no modules)
+ * THE MUSIC ROOM — Portable site bundle (classic script, no modules)
  *
  * Why this file exists:
  * The original code used ES modules (`type="module"` + `import ... from ...`).
@@ -703,7 +703,7 @@
     catch (e) {
       // One broken widget must never take down the whole page.
       // Surface the error for debugging, but keep the site usable.
-      if (window.console && console.error) console.error('[MusicFactory] ' + name + ' failed:', e);
+      if (window.console && console.error) console.error('[MusicRoom] ' + name + ' failed:', e);
       // If reveal-on-scroll broke, unhide content so nothing stays invisible.
       try {
         var stuck = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .zoom-in');

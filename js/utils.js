@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Shared Utilities
+ * THE MUSIC ROOM — Shared Utilities
  * throttle, debounce helpers
  */
 

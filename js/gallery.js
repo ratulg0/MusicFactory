@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Gallery Module
+ * THE MUSIC ROOM — Gallery Module
  * Category filters + lightbox with keyboard/swipe navigation.
  */
 

@@ -1,5 +1,5 @@
 ﻿/* ============================================================
-   THE MUSIC FACTORY - Bundled stylesheet (no @import)
+   THE MUSIC ROOM - Bundled stylesheet (no @import)
    Single file so the site renders identically in EVERY browser
    (Chrome, Edge, Firefox, Safari) over http(s) AND file://.
    Old @import chains are blocked by Edge tracking prevention and
@@ -10,7 +10,7 @@
 
 /* ===== css/variables.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Design Tokens
+   THE MUSIC ROOM — Design Tokens
    Single source of truth for all reusable values.
    Never reference raw hex or magic numbers in components.
    ============================================================ */
@@ -163,7 +163,7 @@
 
 /* ===== css/reset.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Reset & Normalize
+   THE MUSIC ROOM — Reset & Normalize
    Removes browser inconsistencies. Sets sensible defaults.
    ============================================================ */
 
@@ -281,7 +281,7 @@ p {
 
 /* ===== css/typography.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Typography System
+   THE MUSIC ROOM — Typography System
    Playfair Display (headings) + Inter (body)
    Scale: hero → h1 → h2 → h3 → body → small
    ============================================================ */
@@ -397,7 +397,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/layout.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Layout System
+   THE MUSIC ROOM — Layout System
    Container, 12-col grid, section spacing, page structure
    ============================================================ */
 
@@ -564,7 +564,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/components.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Components
+   THE MUSIC ROOM — Components
    Order: Buttons → Navbar → Hero → Cards → Sections → Footer → Forms
    ============================================================ */
 
@@ -2077,7 +2077,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/animations.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Animations & Transitions
+   THE MUSIC ROOM — Animations & Transitions
    Philosophy: motion supports content, never distracts.
    All animations respect prefers-reduced-motion (set in reset.css).
    ============================================================ */
@@ -2233,7 +2233,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/utilities.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Utility Classes
+   THE MUSIC ROOM — Utility Classes
    Lightweight helpers. Never replace semantic components.
    ============================================================ */
 
@@ -2360,7 +2360,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/responsive.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Responsive Overrides
+   THE MUSIC ROOM — Responsive Overrides
    Breakpoints: 1024px (tablet) → 768px → 480px (mobile)
    ============================================================ */
 
@@ -2510,7 +2510,7 @@ h4 { font-size: var(--text-h4); }
 
 /* ===== css/compat.css ===== */
 /* ============================================================
-   THE MUSIC FACTORY — Cross-browser compatibility layer
+   THE MUSIC ROOM — Cross-browser compatibility layer
    Loaded LAST so its fallbacks win only where the browser
    lacks support for modern CSS (old Edge, IE11, old Safari).
 

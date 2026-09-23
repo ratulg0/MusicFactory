@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Theme Module
+ * THE MUSIC ROOM — Theme Module
  * Toggles between dark (default) and light themes via the navbar
  * switch button. Persists the choice in localStorage.
  */

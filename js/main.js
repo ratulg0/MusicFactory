@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — Main JS Entry Point
+ * THE MUSIC ROOM — Main JS Entry Point
  * Initialises all modules after DOM is ready
  */
 import { initNavbar } from './navbar.js';

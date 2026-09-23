@@ -1,5 +1,5 @@
 /**
- * THE MUSIC FACTORY — FAQ Module
+ * THE MUSIC ROOM — FAQ Module
  * Accessible accordion: one panel open at a time, keyboard friendly.
  */
 
