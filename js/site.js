@@ -246,6 +246,26 @@
         { name: 'Chapter 5 \u00B7 Weekend Music Circle', points: ['Group singing', 'Informal performance', 'Listening and sharing', 'Community music activities'] },
         { name: 'Chapter 6 \u00B7 Music as a Lifelong Companion', points: ['Creating a personal music routine', 'Continuing practice independently', 'Music for family and friends', 'Joyful lifelong learning'] }
       ]
+    },
+    {
+      id: 'workshops',
+      level: 'Monthly Workshops \u00B7 Open to All',
+      title: 'Monthly Workshops',
+      icon: '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>',
+      tagline: 'Focused monthly workshops on technique, performance, songwriting and production \u2014 50% off for enrolled students, open to everyone.',
+      description: 'The Music Room runs one focused workshop every month on topics like technique deep-dives, performance skills, songwriting, music production, and ensemble playing. Enrolled students receive a 50% discount. Workshops are also open to anyone who wants to learn without joining regular classes \u2014 no long-term commitment required.',
+      objectives: [
+        'Learn focused skills in a single session.',
+        'Explore new topics without enrolling in a full program.',
+        'Connect with other musicians in the community.',
+        'Get 50% off as an enrolled student.',
+        'No long-term commitment \u2014 join any workshop that interests you.'
+      ],
+      chapters: [
+        { name: 'Workshop Format', points: ['2\u20133 hour focused sessions', 'Hands-on learning with instruments', 'Small group environment', 'Take-home practice materials'] },
+        { name: 'Topics Rotate Monthly', points: ['Performance & stage confidence', 'Songwriting & composition', 'Music production basics', 'Ensemble & band skills', 'Technique deep-dives (guitar, keys, vocals)', 'Ear training & improvisation'] },
+        { name: 'Pricing & Access', points: ['50% discount for enrolled students', 'Open to public at standard rate', 'No enrollment required', 'Book individual workshops as needed'] }
+      ]
     }
   ];
 
